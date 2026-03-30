@@ -16,6 +16,8 @@
 - Python 3.10+
 - FastAPI + Uvicorn
 - LangGraph (pipeline orchestration)
+- PyMongo + MongoDB (persistence)
+- Pydantic (data models)
 - PDF processing libraries
 - Modular extraction pipelines (each as its own module)
 
@@ -29,66 +31,255 @@
 
 ---
 
+### Frontend ↔ Backend Communication
+
+Each row is a matched pair: the React screen on the left calls the FastAPI endpoint on the right.
+
+```mermaid
+flowchart LR
+    subgraph FE["React Frontend — localhost:5173"]
+        A1[PDF upload screen]
+        A2[CSV preview table]
+        A3[Process selected]
+        A4[Dashboard charts]
+        A5[Payee lookup tools]
+    end
+
+    subgraph BE["FastAPI Backend — 127.0.0.1:8000"]
+        B1[POST /extract-pdf\nreturns CSV file]
+        B2[POST /upload-csv\nreturns transaction list]
+        B3[POST /process-selected\nruns pipeline + saves to DB]
+        B4[GET /statistics\ncategory breakdown]
+        B5["POST /payee-llm *\n4 LLM lookup variants"]
+    end
+
+    A1 -->|multipart PDF| B1
+    B1 -->|FileResponse CSV| A1
+    A2 -->|multipart CSV| B2
+    B2 -->|transaction list JSON| A2
+    A3 -->|JSON array of rows| B3
+    B3 -->|pipeline output JSON| A3
+    A4 -->|GET| B4
+    B4 -->|stats JSON| A4
+    A5 -->|plain string| B5
+    B5 -->|payee + summary JSON| A5
+```
+
+---
+
+### LangGraph Pipeline Internals
+
+What happens inside `run_pipeline()` for every transaction string. The conditional branch at `merchant?` is the key design decision — merchant transactions run two extra nodes, non-merchants skip straight to finalization.
+
+```mermaid
+flowchart TD
+    START([transaction string])
+    START --> N1
+
+    N1["payee name extraction
+    LLM parses raw narration string
+    → state.payee_name"]
+
+    N1 --> N2
+
+    N2["merchant identification
+    binary classifier
+    → state.is_merchant: true / false"]
+
+    N2 --> DECISION{merchant?}
+
+    DECISION -->|yes| N3
+    DECISION -->|no| N5
+
+    N3["merchant info extraction
+    name, summary, websites
+    → state.merchant_summary
+    → state.merchant_websites"]
+
+    N3 --> N4
+
+    N4["categorization
+    food, travel, utilities...
+    → state.merchant_category"]
+
+    N4 --> N5
+
+    N5["finalization
+    save_record_to_db()
+    CSV fields + pipeline state → MongoDB"]
+
+    N5 --> END([done])
+```
+
+**Pipeline state keys written by each node:**
+
+| Key | Written by | Value |
+|---|---|---|
+| `payee_name` | payee extraction | string — e.g. `"Zomato"` |
+| `is_merchant` | merchant identification | boolean |
+| `merchant_summary` | merchant info extraction | free-text description |
+| `merchant_websites` | merchant info extraction | list of URLs |
+| `merchant_category` | categorization | label — e.g. `"Food & Dining"` |
+
+---
+
+### Data Flow (PDF → MongoDB)
+
+How data physically moves through the system, including the intentional re-upload loop. The CSV is returned to the user as a download so they can inspect or edit rows before choosing which ones to process.
+
+```mermaid
+flowchart TD
+    U([user browser])
+    U -->|multipart POST /extract-pdf| S1
+
+    S1["PDF saved to disk
+    uploads/{filename}.pdf"]
+
+    S1 --> S2
+
+    S2["process_pdf()
+    extraction_from_pdfs module
+    raw rows extracted"]
+
+    S2 --> S3
+
+    S3["CSV written to disk
+    output/transactions_{name}.csv"]
+
+    S3 -->|FileResponse download| U
+
+    U -->|user re-uploads CSV
+    POST /upload-csv| S4
+
+    S4["read_transactions_from_csv()
+    CSV parsed row by row
+    → List[Transaction]"]
+
+    S4 --> GLOBAL1[(csv_transactions_global\nin-memory list)]
+
+    S4 -->|user selects rows
+    POST /process-selected| S5
+
+    S5["run_pipeline per transaction
+    LangGraph DAG"]
+
+    S5 --> S6
+
+    S6["save_record_to_db()
+    merges CSV fields + pipeline state
+    → MongoDB document"]
+
+    S6 --> DB[(transactions_db.transactions\nMongoDB)]
+
+    S5 --> GLOBAL2[(processed_output_global\nin-memory dict)]
+
+    GLOBAL1 -->|cross-referenced| STATS
+    GLOBAL2 -->|cross-referenced| STATS
+
+    STATS["get_statistics()
+    category totals, spent/earned
+    merchant vs non-merchant counts"]
+
+    STATS -->|GET /statistics response| U
+```
+
+**MongoDB document shape** (written by `save_record_to_db`):
+
+```json
+{
+  "date": "2024-01-15",
+  "amount": 450.0,
+  "credit/debit": "DR",
+  "balance": 12000.0,
+  "reference_number": "...",
+  "type": "Food & Dining",
+  "transaction": "UPI/DR/.../ZOMATO/...",
+  "payee_name": "Zomato",
+  "is_merchant": true,
+  "merchant_summary": "Indian food delivery platform...",
+  "merchant_websites": ["zomato.com"]
+}
+```
+
+---
+
+### Diagram 4 — Deployment / Infrastructure
+
+Local dev uses `localhost:27017` and local disk. Production swaps those for MongoDB Atlas and AWS S3 via environment variable updates only — no code changes needed.
+
+```mermaid
+flowchart TD
+    USER([browser / user])
+
+    USER -->|HTTPS static assets| CDN
+    USER -->|REST API calls| LB
+
+    subgraph FRONTEND["Frontend — Vercel / Netlify"]
+        CDN[CloudFront CDN\nReact + Vite SPA]
+    end
+
+    subgraph BACKEND["Backend — AWS EC2 / ECS"]
+        LB[Uvicorn + Gunicorn\nFastAPI — 4 workers]
+    end
+
+    subgraph AWS["AWS Infrastructure"]
+        S3[S3 Bucket\nPDF + CSV file storage]
+        MONGO[(MongoDB Atlas\ntransactions_db)]
+        LANG[LangGraph runtime\nin-process orchestrator]
+    end
+
+    subgraph EXTERNAL["External APIs"]
+        LLM[LLM API\nOpenAI / Gemini]
+        SEARCH[Web Search API\nSerpAPI / Tavily]
+    end
+
+    LB -->|file upload and download| S3
+    LB -->|insert and query| MONGO
+    LB -->|orchestrates| LANG
+    LANG -->|inference calls| LLM
+    LANG -->|langsearch variants only| SEARCH
+```
+
+**Local dev vs production equivalents:**
+
+| Component | Local dev | Production |
+|---|---|---|
+| Database | `mongodb://localhost:27017/` | MongoDB Atlas (`MONGO_URI`) |
+| File storage | `uploads/` and `output/` on disk | AWS S3 bucket |
+| Backend server | `uvicorn main:app --reload` | Gunicorn + Uvicorn workers |
+| Frontend | `npm run dev` on port 5173 | Vercel / Netlify / CloudFront |
+
+---
+
 ## Project Structure
 
 ```
 Smart-Narration-Parser/
 │
-├── main.py                            # FastAPI entry point — all API routes
-├── finalize.py                        # Core pipeline runner + DB storage + stats
+├── main.py                                # FastAPI entry point — all API routes
+├── finalize.py                            # Core pipeline runner + DB storage + stats
 ├── requirements.txt
 ├── .gitignore
 │
-├── extraction_from_pdfs/              # PDF → CSV transaction extraction
-├── payee_name_extraction/             # Extract payee names from narration strings
+├── extraction_from_pdfs/                  # PDF → CSV transaction extraction
+├── payee_name_extraction/                 # Extract payee names from narration strings
 ├── merchant_non_merchant_identification/  # Classify: is this a merchant transaction?
-├── merchant_information_extraction/   # Extract structured merchant info
-├── categorization_of_merchants/       # Category tagging (food, travel, utilities…)
-├── langgraph_orchaestration/          # LangGraph DAG wiring all pipeline stages
-├── finalization_and_storage_in_db/    # Final DB write logic
+├── merchant_information_extraction/       # Extract structured merchant info
+├── categorization_of_merchants/           # Category tagging (food, travel, utilities…)
+├── langgraph_orchaestration/              # LangGraph DAG wiring all pipeline stages
+├── finalization_and_storage_in_db/        # Final DB write logic
 │
-├── uploads/                           # Temp storage for uploaded PDFs
-├── output/                            # Generated CSV files
+├── uploads/                               # Temp storage for uploaded PDFs
+├── output/                                # Generated CSV files
 │
-└── client/                            # React + Vite frontend
-```
-
----
-
-## Processing Pipeline
-
-The system processes each transaction narration through a sequential multi-stage pipeline, orchestrated by LangGraph:
-
-```
-PDF Upload
-    │
-    ▼
-[1] PDF Extraction          →  Raw transaction rows extracted to CSV
-    │
-    ▼
-[2] Payee Name Extraction    →  "ZOMATO", "SWIGGY", "HDFC BANK" identified
-    │
-    ▼
-[3] Merchant Identification  →  Is this a merchant or a peer/bank transfer?
-    │
-    ▼
-[4] Merchant Info Extraction →  Name, location, business type extracted
-    │
-    ▼
-[5] Categorization           →  Food, Travel, Utilities, Shopping, etc.
-    │
-    ▼
-[6] Finalization & DB Store  →  Structured record saved to database
-    │
-    ▼
-[7] Statistics Output        →  Aggregated summary returned to frontend
+└── client/                                # React + Vite frontend
 ```
 
 ---
 
 ## API Endpoints
 
-Base URL: `http://127.0.0.1:8000`
+Base URL: `http://127.0.0.1:8000`  
 Swagger docs: `http://127.0.0.1:8000/docs`
 
 ---
@@ -144,7 +335,7 @@ Swagger docs: `http://127.0.0.1:8000/docs`
 
 **Purpose**: Run the full AI pipeline on a user-selected subset of transactions.
 
-**Request Body**: JSON array of transaction objects (selected by the user in the frontend).
+**Request Body**: JSON array of transaction objects.
 
 ```json
 [
@@ -164,34 +355,32 @@ Swagger docs: `http://127.0.0.1:8000/docs`
       "pipeline_output": {
         "payee_name": "Zomato",
         "is_merchant": true,
-        "category": "Food & Dining",
-        "merchant_info": { ... }
+        "merchant_category": "Food & Dining",
+        "merchant_summary": "...",
+        "merchant_websites": ["zomato.com"]
       }
     }
   ]
 }
 ```
 
-**Notes**: Each transaction is run through `run_pipeline()`, saved to the database via `save_record_to_db()`, and the results are stored globally in `processed_output_global`.
-
 ---
 
 ### GET `/statistics`
 
-**Purpose**: Get aggregated statistics on the processed transactions.
+**Purpose**: Aggregated statistics cross-referencing pipeline output with original CSV data.
 
 **Response**:
 ```json
 {
   "status": "success",
   "statistics": {
-    "total_transactions": 50,
-    "merchant_count": 32,
-    "non_merchant_count": 18,
-    "categories": {
-      "Food & Dining": 12,
-      "Travel": 8,
-      "Utilities": 5
+    "Food & Dining": {
+      "total_transactions": 12,
+      "merchant_transactions": 12,
+      "non_merchant_transactions": 0,
+      "total_spent": 5400.0,
+      "total_earned": 0.0
     }
   }
 }
@@ -199,185 +388,81 @@ Swagger docs: `http://127.0.0.1:8000/docs`
 
 **Error** (if no transactions processed yet):
 ```json
-{
-  "status": "error",
-  "message": "No processed transactions yet."
-}
+{ "status": "error", "message": "No processed transactions yet." }
 ```
 
 ---
 
 ### POST `/payee-llm`
 
-**Purpose**: Extract payee name from a raw narration string using LLM only.
+LLM-only payee extraction. Fastest variant, no web search.
 
-**Request Body**: Plain string (not JSON)
+**Request**: plain string — `UPI/DR/123456789/ZOMATO/YESB/somecode`
 
-```
-UPI/DR/123456789/ZOMATO/YESB/somecode
-```
-
-**Response**: Extracted payee name and metadata.
+**Response**: `{ "payee_name": "Zomato", "merchant_summary": "..." }`
 
 ---
 
 ### POST `/payee-llm-langsearch`
 
-**Purpose**: Extract payee name using LLM + web search for better accuracy on ambiguous narrations.
+LLM extraction with web search fallback if summary is empty or unhelpful.
 
-**Request Body**: Plain string
-
-**Notes**: Uses LangGraph's web search integration to validate or enrich the extracted payee name.
+**Response**: `{ "payee_name": "...", "merchant_summary": "...", "merchant_websites": [...] }`
 
 ---
 
 ### POST `/given-payee-llm`
 
-**Purpose**: Given a known payee name, extract structured merchant information using LLM.
+Given a known payee name, generate merchant info via LLM only.
 
-**Request Body**: Plain string (payee name)
-
-```
-Zomato
-```
-
-**Response**: Structured merchant info (category, business type, etc.)
+**Request**: plain string — `Zomato`
 
 ---
 
 ### POST `/given-payee-llm-langsearch`
 
-**Purpose**: Given a payee name, fetch enriched merchant data via LLM + web search.
+Given a known payee name, generate enriched merchant info via LLM + web search fallback.
 
-**Request Body**: Plain string (payee name)
-
-**Notes**: More accurate than `/given-payee-llm` but slower due to web search.
+> All four `/payee-*` variants share the same fallback logic — web search only fires when `generate_merchant_summary()` returns `None`, `""`, or `"No information found"`.
 
 ---
 
-## Core Business Logic
+## Core Logic
 
 ### `finalize.py` — The Heart of the System
-
-This file contains all core logic:
 
 | Function | Purpose |
 |---|---|
 | `read_transactions_from_csv()` | Parse CSV into `Transaction` objects |
 | `run_pipeline()` | Execute the full LangGraph pipeline on one transaction |
-| `save_record_to_db()` | Persist a processed transaction to the database |
+| `save_record_to_db()` | Persist a processed transaction to MongoDB |
 | `get_statistics()` | Compute aggregated stats from processed + CSV data |
 | `api_1_payee_llm()` | LLM-only payee extraction |
 | `api_2_payee_llm_langsearch()` | LLM + web search payee extraction |
 | `api_3_given_payee_llm()` | LLM merchant info from known payee |
 | `api_4_given_payee_llm_langsearch()` | LLM + web search merchant info |
 
-### Transaction Data Model
+### Transaction Data Model (Pydantic)
 
 ```python
-class Transaction:
-    transaction: str   # Raw narration string
-    amount: float      # Transaction amount
-    date: str          # Transaction date
+class Transaction(BaseModel):
+    date: Optional[str]
+    amount: Optional[float]
+    type: Optional[str]           # "DR" or "CR"
+    balance: Optional[float]
+    reference_number: Optional[str]
+    category: Optional[str]
+    transaction: str              # Raw narration string — the key input field
 ```
 
 ### Global State
 
-The FastAPI app maintains two in-memory global stores:
-
 ```python
-processed_output_global: List[Dict]      # Results from /process-selected
-csv_transactions_global: List[Transaction]  # Transactions from /upload-csv
+processed_output_global: List[Dict]        # Results from /process-selected
+csv_transactions_global: List[Transaction] # Transactions from /upload-csv
 ```
 
-These allow the `/statistics` endpoint to cross-reference CSV data with pipeline output without re-reading files.
-
----
-
-## LangGraph Orchestration
-
-The pipeline is structured as a LangGraph DAG (Directed Acyclic Graph). Each node in the graph is a processing stage:
-
-```
-START
-  │
-  ├─► payee_extraction_node
-  │         │
-  ├─► merchant_classifier_node
-  │         │
-  │    ┌────┴────┐
-  │  (merchant) (non-merchant)
-  │    │              │
-  ├─► info_extraction │
-  │    │              │
-  ├─► categorization  │
-  │         │         │
-  └─► finalization ◄──┘
-          │
-         END
-```
-
-The `langgraph_orchaestration/` module wires these nodes together and handles conditional routing (e.g., skipping merchant info extraction for non-merchant transactions).
-
----
-
-## Frontend (React + Vite)
-
-Located in the `client/` directory.
-
-### Setup
-
-```bash
-cd client
-npm install
-npm run dev
-# Runs at http://localhost:5173
-```
-
-### API Connection
-
-```javascript
-axios.create({ baseURL: "http://127.0.0.1:8000" })
-```
-
-### Screens / Features
-
-Based on the dependencies, the frontend provides:
-
-- **PDF Upload** — drag and drop or file picker → calls `/extract-pdf`
-- **CSV Preview** — table showing extracted transactions → calls `/upload-csv`
-- **Transaction Selection** — checkboxes to select which transactions to process
-- **Processing** — sends selected transactions to `/process-selected`
-- **Dashboard / Charts** — Recharts visualizations of categories and merchant breakdown → calls `/statistics`
-
----
-
-## Configuration
-
-### Environment Variables
-
-```env
-# Database connection
-DB_URI=...
-
-# LLM API Key (for payee extraction and merchant info)
-OPENAI_API_KEY=... or GOOGLE_API_KEY=...
-
-# Web search (if using langsearch variants)
-SERPAPI_KEY=... or TAVILY_API_KEY=...
-```
-
-### CORS
-
-The backend is configured with wide-open CORS for local development:
-
-```python
-allow_origins=["*"]
-allow_methods=["*"]
-allow_headers=["*"]
-```
-
-**Note**: Restrict `allow_origins` to specific domains before deploying to production.
+Both are cross-referenced by `get_statistics()`. **Both reset on server restart** — a known production limitation (see Known Issues).
 
 ---
 
@@ -386,14 +471,9 @@ allow_headers=["*"]
 ### Backend
 
 ```bash
-# Install dependencies
 pip install -r requirements.txt
-
-# Start server with hot reload
 uvicorn main:app --reload
-
-# Swagger UI available at:
-# http://127.0.0.1:8000/docs
+# Swagger UI: http://127.0.0.1:8000/docs
 ```
 
 ### Frontend
@@ -406,67 +486,27 @@ npm run dev
 ```
 
 ---
-
-## Production Deployment
-
-### Backend
-- **Server**: Uvicorn + Gunicorn (`gunicorn -w 4 -k uvicorn.workers.UvicornWorker main:app`)
-- **Hosting**: AWS EC2, ECS/Fargate, or any Python-compatible PaaS
-- **File Storage**: Move `uploads/` and `output/` to AWS S3
-- **Database**: AWS RDS or MongoDB Atlas for structured transaction storage
-
-### Frontend
-- **Build**: `npm run build` → generates `dist/`
-- **Hosting**: Vercel, Netlify, or AWS CloudFront + S3
-
----
-
-## Known Issues & Recommended Improvements
-
-### Current Limitations
-
-- **In-memory global state** — `processed_output_global` and `csv_transactions_global` are reset on every server restart. For production, these should be persisted in a database or Redis cache.
-- **No authentication** — any client can call any endpoint. Add API key or JWT auth for production.
-- **Wide-open CORS** — `allow_origins=["*"]` is fine for development but must be restricted for production.
-- **Temp file handling** — uploaded CSVs use `tempfile` but PDFs are saved to `uploads/` permanently. Add a cleanup job.
-- **No input validation** — the `/process-selected` endpoint accepts arbitrary dicts; add Pydantic model validation.
-
-### Recommended Improvements
-
-1. Add Pydantic request models for all endpoints
-2. Replace in-memory globals with a proper database session
-3. Add authentication middleware (API keys or JWT)
-4. Add background task support (`BackgroundTasks`) for long-running pipeline runs
-5. Add a `/status/{job_id}` polling endpoint for async processing
-6. Add structured logging (e.g., `loguru`)
-7. Write unit tests for each pipeline stage independently
-8. Add rate limiting to the LLM-based endpoints
-
----
-
 ## End-to-End Usage Example
 
 ```
 1. Upload PDF
-   POST /extract-pdf  →  returns transactions.csv
+   POST /extract-pdf  →  returns transactions.csv download
 
-2. Load CSV into UI
-   POST /upload-csv   →  returns transaction list for preview
+2. Review and re-upload CSV
+   POST /upload-csv   →  returns parsed transaction list
 
-3. User selects transactions in UI
+3. Select rows in UI, submit
+   POST /process-selected  →  runs LangGraph pipeline, saves to MongoDB
 
-4. Process selected
-   POST /process-selected  →  runs pipeline, saves to DB
-
-5. View results
-   GET /statistics  →  returns category breakdown, merchant counts, etc.
+4. View results
+   GET /statistics  →  category breakdown, merchant counts, spend totals
 ```
 
-Or for single transaction testing:
+Or for single-transaction testing via Swagger at `/docs`:
 
 ```
-POST /payee-llm                  →  quick LLM-only payee extraction
-POST /payee-llm-langsearch       →  LLM + web search for accuracy
-POST /given-payee-llm            →  merchant info from known name
-POST /given-payee-llm-langsearch →  enriched merchant info via search
+POST /payee-llm                  →  fast LLM-only extraction
+POST /payee-llm-langsearch       →  LLM + web search fallback
+POST /given-payee-llm            →  merchant info from a known payee name
+POST /given-payee-llm-langsearch →  enriched merchant info with search fallback
 ```
