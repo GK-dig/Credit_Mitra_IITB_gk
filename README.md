@@ -6,6 +6,11 @@
 
 **Core Use Case**: Financial institutions and fintech apps need to transform messy, unstructured narration strings (like `"UPI/DR/123456789/ZOMATO/YESB/somecode"`) into clean, structured, categorized records.
 
+**Project Plan**:
+You can find the project plan [Here][].
+<!-- Link Definitions (can be placed at the end of the file) -->
+[Here]: https://docs.google.com/spreadsheets/d/1R4jnfN6i1RINwZK6Y1QYTtlt_zAcFxYfLw7zYKLjdpI/edit?usp=sharin
+
 ---
 
 ## System Architecture
