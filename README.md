@@ -14,7 +14,6 @@ You can find the project plan [Here][].
 ---
 
 ## System Architecture
-
 ### Technology Stack
 
 **Backend**
