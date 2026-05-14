@@ -11,6 +11,7 @@ import os
 import sys
 import tempfile
 from pathlib import Path
+from dp import extract_with_dp, privatise_payee, budget
 
 import torch
 import uvicorn
@@ -135,12 +136,17 @@ async def process_pdf(pdf: UploadFile = File(...)):
     try:
         # Step 1 — Docling extraction
         transactions = extract_transactions(tmp.name)
+        transactions, dp_report1 = extract_with_dp(transactions, epsilon=2.0)
+
 
         # Step 2 — SLM payee prediction for each row with a narration
         for txn in transactions:
             narration = txn.get("particulars", "")
             if narration and narration not in ("Opening Balance", "Closing Balance"):
                 txn["payee"] = predict_payee(narration)
+                dp_result = privatise_payee(txn["payee"], epsilon=1.0)
+                txn["payee_tokens_dp"] = dp_result["payee_tokens_dp"]
+                txn["payee"] = " ".join(dp_result["payee_tokens_dp"]) 
             else:
                 txn["payee"] = ""
 
