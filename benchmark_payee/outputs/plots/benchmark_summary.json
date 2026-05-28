@@ -5,21 +5,21 @@
     "recall": 62.04,
     "f1": 57.47,
     "n_samples": 486,
-    "avg_latency_ms": 332.5915259259277
+    "avg_latency_ms": 663.2573279835295
   },
   "Fine-tuned (LoRA)": {
-    "exact_match": 0.0,
-    "precision": 0.0,
-    "recall": 0.0,
-    "f1": 0.0,
+    "exact_match": 86.21,
+    "precision": 89.4,
+    "recall": 89.3,
+    "f1": 89.3,
     "n_samples": 486,
     "avg_latency_ms": 0.0
   },
   "DP Fine-tuned (LoRA)": {
-    "exact_match": 0.0,
-    "precision": 0.0,
-    "recall": 0.0,
-    "f1": 0.0,
+    "exact_match": 83.33,
+    "precision": 87.89,
+    "recall": 92.63,
+    "f1": 89.2,
     "n_samples": 486,
     "avg_latency_ms": 0.0
   }

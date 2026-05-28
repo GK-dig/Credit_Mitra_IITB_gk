@@ -95,7 +95,8 @@ def load_existing_predictions(pred_dir: str, n_expected: int) -> List[str]:
             obj = json.loads(line)
             pred = obj.get("prediction",
                    obj.get("response",
-                   obj.get("output", ""))).strip()
+                   obj.get("output",
+                   obj.get("pred", "")))).strip()
             preds.append(pred)
 
     if len(preds) != n_expected:
