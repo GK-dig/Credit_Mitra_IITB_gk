@@ -10,12 +10,6 @@ Usage:
         --eval_dir    ./outputs/eval \
         --eval_dp_dir ./outputs/eval-dp \
         --output_dir  ./outputs/plots
-
-Optional:
-    --base_model  Qwen/Qwen2.5-1.5B-Instruct   (default)
-    --batch_size  8
-    --max_new_tokens 30
-    --limit 100    (quick smoke-test)
 """
 
 import argparse, json, time, os, re
@@ -26,11 +20,6 @@ from typing import List, Dict, Tuple
 
 import torch
 from transformers import AutoTokenizer, AutoModelForCausalLM
-
-
-# ──────────────────────────────────────────────────────────
-# 0. ARGS
-# ──────────────────────────────────────────────────────────
 
 def parse_args():
     p = argparse.ArgumentParser()
@@ -50,10 +39,6 @@ def parse_args():
                    help="Cap test samples for a quick run")
     return p.parse_args()
 
-
-# ──────────────────────────────────────────────────────────
-# 1. DATA LOADING
-# ──────────────────────────────────────────────────────────
 
 def load_test_data(filepath: str, limit=None) -> List[Dict]:
     """Load JSONL test set. Each line: {prompt, response}."""
@@ -106,11 +91,6 @@ def load_existing_predictions(pred_dir: str, n_expected: int) -> List[str]:
 
     print(f"  Loaded {len(preds)} cached predictions from {pred_dir}")
     return preds
-
-
-# ──────────────────────────────────────────────────────────
-# 2. BASE MODEL INFERENCE (Hub → no local path needed)
-# ──────────────────────────────────────────────────────────
 
 def load_base_model(model_id: str):
     device = "cuda" if torch.cuda.is_available() else "cpu"
@@ -184,10 +164,6 @@ def run_base_inference(
     return predictions, avg_lat
 
 
-# ──────────────────────────────────────────────────────────
-# 3. METRICS
-# ──────────────────────────────────────────────────────────
-
 MODEL_NAMES = [
     "Base Qwen 2.5-1.5B",
     "Fine-tuned (LoRA)",
@@ -236,10 +212,6 @@ def compute_metrics(predictions: List[str], ground_truths: List[str]) -> Dict:
     }
 
 
-# ──────────────────────────────────────────────────────────
-# 4. GRAPHS  (4 plots)
-# ──────────────────────────────────────────────────────────
-
 def _style():
     plt.rcParams.update({
         "font.family":        "DejaVu Sans",
@@ -250,7 +222,7 @@ def _style():
     })
 
 
-# Graph 1 — grouped bar: all 4 metrics × 3 models
+# grouped bar
 def plot_accuracy(all_metrics: Dict, out: str):
     _style()
     metric_keys   = ["exact_match", "precision", "recall", "f1"]
@@ -285,7 +257,7 @@ def plot_accuracy(all_metrics: Dict, out: str):
     print(f"  Saved: {path}")
 
 
-# Graph 2 — horizontal bar: latency (base model only, cached have no timing)
+# horizontal bar: latency (base model only, cached have no timing)
 def plot_latency(latencies: Dict, out: str):
     _style()
     names  = [n for n in MODEL_NAMES if latencies[n] > 0]
@@ -314,7 +286,7 @@ def plot_latency(latencies: Dict, out: str):
     print(f"  Saved: {path}")
 
 
-# Graph 3 — radar chart: all 4 metrics × 3 models
+# radar chart
 def plot_radar(all_metrics: Dict, out: str):
     _style()
     categories = ["Exact Match", "Precision", "Recall", "F1"]
@@ -344,7 +316,7 @@ def plot_radar(all_metrics: Dict, out: str):
     print(f"  Saved: {path}")
 
 
-# Graph 4 — clean single-metric bar: Exact Match headline figure
+# clean single-metric bar: Exact Match headline figure
 def plot_exact_match(all_metrics: Dict, out: str):
     _style()
     vals   = [all_metrics[n]["exact_match"] for n in MODEL_NAMES]
@@ -370,11 +342,6 @@ def plot_exact_match(all_metrics: Dict, out: str):
     fig.savefig(path, dpi=150, bbox_inches="tight")
     plt.close(fig)
     print(f"  Saved: {path}")
-
-
-# ──────────────────────────────────────────────────────────
-# 5. SAVE + PRINT
-# ──────────────────────────────────────────────────────────
 
 def print_table(all_metrics: Dict, latencies: Dict):
     print("\n" + "=" * 75)
@@ -417,10 +384,6 @@ def save_csv(all_preds: Dict, samples: List[Dict], out: str):
     print(f"  Saved: {path}")
 
 
-# ──────────────────────────────────────────────────────────
-# 6. MAIN
-# ──────────────────────────────────────────────────────────
-
 def main():
     args = parse_args()
     Path(args.output_dir).mkdir(parents=True, exist_ok=True)
@@ -434,7 +397,7 @@ def main():
     all_metrics:     Dict[str, Dict]      = {}
     latencies:       Dict[str, float]     = {}
 
-    # ── 1. Base model: run inference fresh ────────────────
+    # Base model: run inference fresh 
     print("\n── Base Model (HuggingFace Hub) ──")
     base_preds, base_lat = run_base_inference(
         args.base_model, samples, args.max_new_tokens, args.batch_size
@@ -443,31 +406,31 @@ def main():
     all_metrics["Base Qwen 2.5-1.5B"]     = compute_metrics(base_preds, ground_truths)
     latencies["Base Qwen 2.5-1.5B"]       = base_lat
 
-    # ── 2. Fine-tuned LoRA: reuse eval/predictions.jsonl ──
+    # Fine-tuned LoRA: reuse eval/predictions.jsonl 
     print("\n── Fine-tuned LoRA (cached from eval/) ──")
     ft_preds = load_existing_predictions(args.eval_dir, n)
     all_predictions["Fine-tuned (LoRA)"] = ft_preds
     all_metrics["Fine-tuned (LoRA)"]     = compute_metrics(ft_preds, ground_truths)
     latencies["Fine-tuned (LoRA)"]       = 0.0
 
-    # ── 3. DP Fine-tuned LoRA: reuse eval-dp/predictions.jsonl
+    #DP Fine-tuned LoRA: reuse eval-dp/predictions.jsonl
     print("\n── DP Fine-tuned LoRA (cached from eval-dp/) ──")
     dp_preds = load_existing_predictions(args.eval_dp_dir, n)
     all_predictions["DP Fine-tuned (LoRA)"] = dp_preds
     all_metrics["DP Fine-tuned (LoRA)"]     = compute_metrics(dp_preds, ground_truths)
     latencies["DP Fine-tuned (LoRA)"]       = 0.0
 
-    # ── Results table ──────────────────────────────────────
+    # Results 
     print_table(all_metrics, latencies)
 
-    # ── Graphs ─────────────────────────────────────────────
+    # Graphs 
     print("\n── Generating graphs ──")
     plot_accuracy(all_metrics,    args.output_dir)
     plot_latency(latencies,       args.output_dir)
     plot_radar(all_metrics,       args.output_dir)
     plot_exact_match(all_metrics, args.output_dir)
 
-    # ── Save files ─────────────────────────────────────────
+    
     print("\n── Saving output files ──")
     save_summary(all_metrics, latencies, args.output_dir)
     save_csv(all_predictions, samples,   args.output_dir)
