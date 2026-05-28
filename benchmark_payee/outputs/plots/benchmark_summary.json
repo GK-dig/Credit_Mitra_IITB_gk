@@ -1,0 +1,26 @@
+{
+  "Base Qwen 2.5-1.5B": {
+    "exact_match": 35.19,
+    "precision": 55.87,
+    "recall": 62.04,
+    "f1": 57.47,
+    "n_samples": 486,
+    "avg_latency_ms": 332.5915259259277
+  },
+  "Fine-tuned (LoRA)": {
+    "exact_match": 0.0,
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "n_samples": 486,
+    "avg_latency_ms": 0.0
+  },
+  "DP Fine-tuned (LoRA)": {
+    "exact_match": 0.0,
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "n_samples": 486,
+    "avg_latency_ms": 0.0
+  }
+}

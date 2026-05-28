@@ -1,0 +1,11 @@
+{
+  "samples": 486,
+  "exact_match": 0.8189300411522634,
+  "normalized_exact_match": 0.8333333333333334,
+  "avg_char_similarity": 0.9158663078863856,
+  "avg_token_jaccard": 0.8983310470964792,
+  "mse_char": 0.05008152091050045,
+  "mse_jaccard": 0.08843608697861098,
+  "rmse_char": 0.22378900980722993,
+  "rmse_jaccard": 0.29738205557600644
+}

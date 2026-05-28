@@ -1,0 +1,15 @@
+{
+  "samples": 486,
+  "exact_match": 0.8518518518518519,
+  "normalized_exact_match": 0.8683127572016461,
+  "avg_char_similarity": 0.9322532180585559,
+  "avg_token_jaccard": 0.8871742112482853,
+  "mse_char": 0.049413940637907335,
+  "mse_jaccard": 0.10076588934613627,
+  "rmse_char": 0.22229246644433845,
+  "rmse_jaccard": 0.31743643355187867,
+  "roc_auc_char": 1.0,
+  "roc_auc_jaccard": 1.0,
+  "pr_auc_char": 1.0,
+  "mse_char_std": 0.1711961942257678
+}
