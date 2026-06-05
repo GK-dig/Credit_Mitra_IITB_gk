@@ -8,7 +8,6 @@ PRIMARY MODELS (your trained checkpoints):
 
 BASELINE COMPARISONS (same ~1.5B parameter class, NER literature standards):
   - meta-llama/Llama-3.2-1B-Instruct     : Meta's 1B instruction model (edge extraction)
-  - microsoft/Phi-3.5-mini-instruct       : Microsoft's best small extraction model
   - google/gemma-2-2b-it                  : Google's 2B, highest NER accuracy in class
 
 All 3 baselines run via HuggingFace Inference API — no local GPU required.
@@ -30,8 +29,7 @@ Optional:
 WHY THESE 3 BASELINE MODELS:
   Llama-3.2-1B  — closest parameter match; Meta's official 1B instruction model.
                    Competitive with Gemma 2B on instruction-following (Meta, 2024).
-  Phi-3.5-mini  — 3.8B but the most relevant competitor: competitive with Llama-3.1-8B
-                   on structured extraction (Microsoft Phi-3 Tech Report, 2024).
+ 
   Gemma-2-2b    — "highest accuracy overall, particularly excelling in extracting
                    various entity types" vs Llama 3.2 and Qwen (Analytics Vidhya, 2025).
 """
@@ -69,13 +67,11 @@ PRIMARY_MODELS = [
 # 3 baselines — all via HF Inference API
 BASELINE_MODELS = [
     "Llama-3.2-1B (Meta)",
-    "Phi-3.5-mini (Microsoft)",
     "Gemma-2-2B (Google)",
 ]
 
 BASELINE_HF_IDS = {
     "Llama-3.2-1B (Meta)":      "meta-llama/Llama-3.2-1B-Instruct",
-    "Phi-3.5-mini (Microsoft)": "microsoft/Phi-3.5-mini-instruct",
     "Gemma-2-2B (Google)":      "google/gemma-2-2b-it",
 }
 
@@ -87,7 +83,6 @@ COLORS = {
     "Fine-tuned (LoRA)":       "#82B366",   # green
     "DP Fine-tuned (LoRA)":    "#D79B00",   # amber
     "Llama-3.2-1B (Meta)":     "#AE4132",   # red
-    "Phi-3.5-mini (Microsoft)":"#7B5EA7",   # purple
     "Gemma-2-2B (Google)":     "#3A7D7B",   # teal
 }
 
@@ -97,7 +92,6 @@ HATCHES = {
     "Fine-tuned (LoRA)":       "",
     "DP Fine-tuned (LoRA)":    "",
     "Llama-3.2-1B (Meta)":     "///",
-    "Phi-3.5-mini (Microsoft)":"///",
     "Gemma-2-2B (Google)":     "///",
 }
 
@@ -186,12 +180,13 @@ def load_local_model(model_id: str):
     if tokenizer.pad_token is None:
         tokenizer.pad_token = tokenizer.eos_token
     model = AutoModelForCausalLM.from_pretrained(
-         model_id,
-         dtype="auto",
-         device_map="auto",
-         low_cpu_mem_usage=True,
-         trust_remote_code=True,
+        model_id,
+        torch_dtype=torch.float16,
+        device_map="auto",
+        trust_remote_code=True,
+        attn_implementation="eager"
 )
+
     if device == "cpu":
         model = model.to(device)
     model.eval()
@@ -226,9 +221,10 @@ def run_local_inference(
             outputs = model.generate(
                 **inputs,
                 max_new_tokens=max_new_tokens,
-                do_sample=False,                 # greedy: deterministic, reproducible
-                pad_token_id=tokenizer.pad_token_id,
-            )
+                do_sample=False,
+                use_cache=False,
+                pad_token_id=tokenizer.eos_token_id,
+             )
         total_time += time.perf_counter() - t0
         generated = outputs[:, inputs["input_ids"].shape[1]:]  # strip echoed prompt
         decoded = tokenizer.batch_decode(generated, skip_special_tokens=True)
