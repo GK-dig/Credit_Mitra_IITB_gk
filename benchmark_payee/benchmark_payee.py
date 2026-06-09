@@ -174,24 +174,19 @@ def load_existing_predictions(pred_dir: str, n_expected: int) -> List[str]:
 
 def load_local_model(model_id: str):
     device = "cuda" if torch.cuda.is_available() else "cpu"
-    print(f"  Loading '{model_id}' onto {device} …")
     tokenizer = AutoTokenizer.from_pretrained(model_id, trust_remote_code=True)
-    tokenizer.padding_side = "left"          # required for decoder-only batched inference
+    tokenizer.padding_side = "left"
     if tokenizer.pad_token is None:
         tokenizer.pad_token = tokenizer.eos_token
     model = AutoModelForCausalLM.from_pretrained(
         model_id,
-        torch_dtype=torch.float16,
+        torch_dtype=torch.float16,   
         device_map="auto",
         trust_remote_code=True,
-        attn_implementation="eager"
-)
-
-    if device == "cpu":
-        model = model.to(device)
+       
+    )
     model.eval()
     return tokenizer, model, device
-
 
 def clean_output(raw: str) -> str:
     raw = raw.strip().split("\n")[0].strip()
@@ -222,7 +217,6 @@ def run_local_inference(
                 **inputs,
                 max_new_tokens=max_new_tokens,
                 do_sample=False,
-                use_cache=False,
                 pad_token_id=tokenizer.eos_token_id,
              )
         total_time += time.perf_counter() - t0
@@ -346,7 +340,7 @@ def run_local_baseline_inference(
     model = AutoModelForCausalLM.from_pretrained(
         model_id,
         token=hf_token,
-        dtype=torch.float16,
+        torch_dtype=torch.float16,
         device_map="auto",
         low_cpu_mem_usage=True,
         trust_remote_code=True,

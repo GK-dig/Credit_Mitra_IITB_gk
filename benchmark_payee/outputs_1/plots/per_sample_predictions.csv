@@ -1,0 +1,592 @@
+sample_id,ground_truth,pred_base_qwen_2.5_1.5b,pred_fine_tuned_lora,pred_dp_fine_tuned_lora,pred_llama_3.2_1b_meta,pred_gemma_2_2b_google,exact_base_qwen_2.5_1.5b,exact_fine_tuned_lora,exact_dp_fine_tuned_lora,exact_llama_3.2_1b_meta,exact_gemma_2_2b_google
+0,Ramesh Kumar Sharma,RSHARMA789@PAYTM,Ramesh Kumar Sharma,Ramesh Kumar Sharma,Ramesh Kumar Sharma,```,0,1,1,1,0
+1,Rohit Tiwari,rohit tiwari1295@okaxis,Rohit Tiwari,Rohit Tiwari,rohit tiwari1295@okaxis,```,0,1,1,0,0
+2,Rajeev Kumar,Rajeev Kumar,Rajeev Kumar,Rajeev Kumar,rajeev.kumar82@upi,```,1,1,1,0,0
+3,BigBasket,rajeev.kumar78,BigBasket,Rajeev Kumar,BigBasket,```,0,1,0,1,0
+4,Arjun Reddy,arjun reddy2214@okaxis,Arjun Reddy,Arjun Reddy,arjun reddy2214@okaxis,```,0,1,1,0,0
+5,Raseel Khan,Raseel Khan1894@oksbi/ICICI Bank/RefNo-20241116123,Raseel Khan,Raseel KhanRaseel KhanRaseel KhanRaseel KhanRaseel KhanRaseel KhanRaseel KhanRaseel Khan,Raseel Khan,```,0,1,0,1,0
+6,Rohan Sharma,Nandini Roy 3236 @ okhdfcbank,Rohan Sharma,Nandini RoyRohan Sharma,Rohan Sharma,,0,1,0,1,0
+7,Sneha Nair,Sneha Nair7940@okaxis/RefNo-234567/TRF To friend for dinner bill,Friend,Sneha Nair,Sneha Nair,```,0,0,1,1,0
+8,Priya Verma,Priya Verma3665@oksbi,Priya Verma,Priya Verma,Priya Verma,```,0,1,1,1,0
+9,Saurabh Jain,saurabh jain9375@ybl,Saurabh Jain,Saurabh Jain,Saurabh Jain,```,0,1,1,1,0
+10,Priya Verma,Priya Verma2832@okhdfcbank/HDFC Bank/RefNo-IMPS202311,Priya Verma,Priya Verma,Priya Verma,```,0,1,1,1,0
+11,Mahendra Patil,mahendra patil7615@ybl,Mahendra Patil,Mahendra Patil,mahendra patil,```,0,1,1,1,0
+12,Pooja Batra,pooja.batra4647,Priya Sharma,Priya SharmaPriya SharmaPriya Sharma,pooja.batra4647@okaxis,```,0,0,0,0,0
+13,Rohan Verma,Rohan Verma,Rohan Verma,Rohan VermaThe payee name is Rohan VermaRohan VermaRohan VermaRohan VermaRohan VermaRohan Ver,Rohan Verma,```,1,1,0,1,0
+14,Ramesh Kumar,Ramesh Kumar,Ramesh Kumar,Ramesh Kumar,Ramesh Kumar,```,1,1,1,1,0
+15,Anjali Sharma,ANJALI SHARMA,Anjali Sharma,Anjali Sharma
+
+Anjali SharmaAnjali SharmaAnjali SharmaAnjali SharmaAnjali SharmaAnjali SharmaAnjali,ANJALI SHARMA,**ANJALI.SHARMA**,1,1,0,1,0
+16,Meera Joshi,Rajan's shop,Rajan,Rajan's shopRajan's shopRajan's shopRajan's shopRajan's shopRajan's shopRajan's shopRajan's shop,meera joshi9398@okaxis/PMT for Diwali gifts - Rajan's shop/AXISB/512345678901,,0,0,0,0,0
+17,Harshit Bansal,Harshit Bansal9622@okaxis/ICICI/RefNo-202311081456,Harshit Bansal,Harshit Bansal,Harshit Bansal9622@okaxis,Harshit Bansal,0,1,1,0,1
+18,Neha Kulkarni,Neha Kulkarni,Neha Kulkarni,Neha Kulkarni,Neha Kulkarni,```,1,1,1,1,0
+19,MedPlus,MedPlus,MedPlus,MedPlus,PUNJAB NATIONAL BANK,```,1,1,1,0,0
+20,Meera Joshi,meera joshi9624@ybl,Meera Joshi,Meera JoshiMeera JoshiMeera JoshiMeera JoshiMeera JoshiMeera JoshiMeera JoshiMeera Jushi,meera joshi,```,0,1,0,1,0
+21,Sneha Nair,sneha nair5380@okhdfcbank,Sneha Nair,Sneha Nair,Sneha Nair,```,0,1,1,1,0
+22,Shivani Das,Shivani Das,Shivani Das,Shivani Das,YES BANK,```,1,1,1,0,0
+23,Sneha Nair,Sneha Nair,Sneha Nair,Sneha NairSneha NairSneha NairSneha NairSneha NairSneha NairSne,Sneha Nair,Sneha Nair,1,1,0,1,1
+24,Ritika Chawla,ritika chawla3517@okaxis,Ritika Chawla,Ritika Chawla,Ritika Chawla,```,0,1,1,1,0
+25,Ritika Chawla,ritika chawla9051@upi/REF-TXN,Ritika Chawla,Ritika Chawla,Ritika Chawla,```,0,1,1,1,0
+26,Rohit Tiwari,Rohit Tiwari2218@paytm/Axis Bank/RefNo:IMPS202311161,Rohit Tiwari,Rohit Tiwari
+
+Rohit Tiwari,Rohit Tiwari,```,0,1,0,1,0
+27,Isha Menon,isha menon,Isha Menon,Isha Menon,menonishaisha,```,1,1,1,0,0
+28,Saurabh Jain,Saurabh Jain9088@okaxis/REF-PAY/Electricity Bill/1234567890,Electricity Bill,Saurabh Jain,Saurabh Jain,```,0,0,1,1,0
+29,Aarav Kapoor,aarav.kapoor2726@ibl/ Paid via GPay to Aarav Kapoor for Diwali gifts ONLY RS,Arav Kapoor,Aarav Kapoor,Aarav Kapoor,```,0,0,1,1,0
+30,Arjun Sharma,arjun.sharma92@upi/Grocy App,Arjun Sharma,Arjun SharmaUPI
+
+Arjun SharmaThe payee of this UPI transaction is Arjun Sharma,arjun.sharma92@upi/Grocy App,```,0,1,0,0,0
+31,Lakshmi Pillai,Lakshmi Pillai,Lakshmi Pillai,Lakshmi Pillai,Lakshmi Pillai,```,1,1,1,1,0
+32,Tanvi Desai,Tanvi Desai3890@ibl/RefNo-X92837465/For Groceries,Tanvi Desai,Tanvi DesaiThe payee in this transaction is Tanvi Desai,Tanvi Desai,```,0,1,0,1,0
+33,Rajesh Kumar,rajesh kumar7890@icici/ICICI BANK/ONLY RS 250.00,Rajesh Kumar,Rajesh Kumar,rajesh kumar7890@icici,```,0,1,1,0,0
+34,Priya Verma,Priya Verma,Priya Verma,Priya Verma,Priya Verma,```,1,1,1,1,0
+35,Reliance Fresh,rajeev.sharma88@paytm,Rajeev Sharma,Rajeev Sharma,Rajeev.sharma88@paytm/Grocery,```,0,0,0,0,0
+36,Harshit Bansal,ICICI,Reliance Smart,Harshit BansalReliance SmartHarshit Bansal,Harshit Bansal,```,0,0,0,1,0
+37,Arjun Reddy,arjun.reddy1348@okhdfcbank,Arjun Reddy,Arjun Reddy,arjun.reddy1348@okhdfcbank,```,0,1,1,0,0
+38,Aarav Kapoor,aaravkapoor1736@ybl,Arav Kapoor,Aarav Kapoor,Aarav Kapoor,**Aarav Kapoor**,0,0,1,1,0
+39,Rohit Tiwari,rohit tiwari9008@upi/ICICI/RefNo-20231116123,Rohit Tiwari,Rohit Tiwari,rohit tiwari,```,0,1,1,1,0
+40,Neha Kulkarni,neha kulkarni,Neha Kulkarni,Neha Kulkarni,neha kulkarni,```,1,1,1,1,0
+41,Gaurav Malhotra,gaurav malhotra7861@okhdfcbank,Gaurav Malhotra,Gaurav Malhotra,Gaurav Malhotra,```,0,1,1,1,0
+42,Mahendra Patil,mahendra patil,Mahendra Patil,Mahendra Patil,mahendra patil1002@okhdfcbank,mahendra patil,1,1,1,0,1
+43,Ramesh Kumar,Ramesh Kumar,Ramesh Kumar,Ramesh Kumar,Ramesh Kumar,```,1,1,1,1,0
+44,Rohit Tiwari,rohit tiwari684@upi,Rohit Tiwari,Rohit Tiwari,rohit tiwari684@upi,```,0,1,1,0,0
+45,Air India,airindia,Air India,AirIndiaUPI/AirIndiaAirIndiaThe payee of this transaction is AirIndia,Only Rs 12500.00,```,0,1,0,0,0
+46,Reliance Fresh,Groceries from Reliance Fresh,Reliance Fresh,Reliance Fresh,Reliance Fresh,```,0,1,1,1,0
+47,Apoorva Singh,apoorva singh1905@paytm/HDFC BANK/RefNo-IMPS20231106,Apoorva Singh,Apoorva Singh,a poorva singh1905@paytm,```,0,1,1,0,0
+48,Lakshmi Pillai,lakshmi pillai4563@ibl/PMT REF:Groceries-Oct/Only Rs 1250.00,Lakshmi Pillai,Lakshmi Pillai,lakshmi pillai4563@ibl/PMT,```,0,1,1,0,0
+49,Isha Menon,isha menon2397@oksbi/PMT/RefNo-87654321/UPI TRAN,Isha Menon,Isha Menon,menon2397@oksbi,```,0,1,1,0,0
+50,Reliance Fresh,daulat rao9126@paytm/Grocery bill - Reliance Fresh/TXN ID: 8765,Reliance Fresh,Reliance Fresh,Reliance Fresh,```,0,1,1,1,0
+51,Priya Sharma,Priya Sharma,Priya Sharma,Priya Sharma,Priya Sharma,```,1,1,1,1,0
+52,Rohit Tiwari,rohit tiwari3418@paytm,Rohit Tiwari,RohtiwatiRohit Tiwari,rohit tiwari,```,0,1,0,1,0
+53,Kiran Mehta,Kiran Mehta2574@oksbi/Groceries/ICICI Bank Ltd/TXN ID:A1B2C3D,Kiran Mehta,Kiran Mehta,Kiran Mehta2574@oksbi,```,0,1,1,0,0
+54,Reliance Smart,ankit gupta7630@okaxis/Grocery bill - Reliance Smart/ICICI Bank,Ankit Gupta,Ankit Gupta,Reliance Smart,```,0,0,0,1,0
+55,Isha Menon,Isha Menon,Reliance Fresh,Isha Menon,isha menon,```,1,0,1,1,0
+56,Gaurav Malhotra,gaurav.malhotra7848@okhdfcbank,Gaurav Malhotra,Gaurav Malhotra,gaurav.malhotra7848@okhdfcbank,```,0,1,1,0,0
+57,Rohan Verma,Rahul Sharma 8091,Rohan Verma,Rohan Verma,Rohan Verma,**rahul.sharma8091@upi**,0,1,1,1,0
+58,Pooja Batra,Pooja Batra-Mobile Recharge,Pooja Batra,Pooja Batra,pooja.batra7923@okhdfcbank,```,0,1,1,0,0
+59,Neha Kulkarni,Neha Kulkarni2151@upi/ICICI/RefNo-2023110614,Neha Kulkarni,Neha Kulkarni,Neha Kulkarni,```,0,1,1,1,0
+60,Rajeev Kumar,Rajeev,Rajeev Kumar,Rajeev Kumar,Rajeev.kumar78@paytm,```,0,1,1,0,0
+61,Vivek Iyer,vivek iyer2819@paytm/HDFC Bank/RefNo:PMT2024102714,Vivek Iyer,Vivek Iyer,vivek iyer2819@paytm,```,0,1,1,0,0
+62,Nandini Roy,Nandini Roy8020@ibl,Nandini Roy,Nandini Roy,nandini roy,nandini roy,0,1,1,1,1
+63,Isha Menon,Isha Menon - Groceries/ICICI Bank/EXPRESS 876543210987,Isha Menon,Isha Menon,Isha Menon,**isha menon**,0,1,1,1,0
+64,Apoorva Singh,Apoorva Singh 327@upi,Apoorva Singh,Apoorva SinghThe payee in this transaction is Apoorva Singh
+
+Apoorva SinghThe payee in this IMPS/P2P,Apoorva Singh,```,0,1,0,1,0
+65,Vivek Iyer,vivek iyer7375@upi/IndusInd Bank/RefNo-2023110714,Vivek Iyer,Vivek Iyer,vivek iyer7375@upi,```,0,1,1,0,0
+66,JioMart,JioMart,JioMart,JioMart JioMart
+
+JioMart JioMart
+
+Ji JioMart
+
+Ji JioMart
+
+Ji JioMart,JioMart,```,1,1,0,1,0
+67,Arjun Reddy,Arjun Reddy98@okhdfcbank,Arjun Reddy,Arjun Reddy,Arjun Reddy98@okhdfcbank,```,0,1,1,0,0
+68,Gaurav Malhotra,gaurav malhotra6403@okaxis,Gaurav Malhotra,Gaurav MalhotraThe payee in this transaction is Gaurav MalhotraGaurav MalhotraGaurav Malhotra,gaurav malhotra6403@okaxis,```,0,1,0,0,0
+69,Ramesh Kumar,Ramesh Kumar,Ramesh Kumar,Ramesh Kumar,Ramesh Kumar,```,1,1,1,1,0
+70,MakeMyTrip,MakeMyTrip-Hotel Booking,MakeMyTrip,MakeMyTrip,ICICI MMT@ICICIBANK REF:XYZ123 ONLY RS,```,0,1,1,0,0
+71,Reliance Fresh,lakshmi pillai7793@okaxis/Grocery bill - Reliance Fresh/RefNo:897654,Reliance Fresh,Lakshmi Pillai,Lakshmi Pillai7793@okaxis,Lakshmi pillai,0,1,0,0,0
+72,Nykaa,Nykaa/Cosmetics Order - NK12345,Nykaa,Nykaa Nykaa
+
+The payee of the transaction is Nykaa Nykaa,Nykaa,```,0,1,0,1,0
+73,Mahendra Patil,mahendra patil6019@paytm,Mahendra Patil,Mahendra Patil,ICICI Bank,```,0,1,1,0,0
+74,manoj yadav9651@ybl,manoj yadav9651@ybl,Manoj Yadav,Manoj Yadav,manoj yadav9651@ybl,manoj yadav9651@ybl,1,0,0,1,1
+75,Arjun Sharma,arjun.sharma1988@paytm,Arjun Sharma,Arjun Sharma,arjun.sharma1988@paytm,```,0,1,1,0,0
+76,Neha Kulkarni,Neha Kulkarni116@ybl,Grocery Bill,Neha KulkarniReturn:Neha Kulkarni,Neha Kulkarni,```,0,0,0,1,0
+77,Kiran Mehta,kiran mehta,Kiran Mehta,Kiran Mehta,kiran mehta,```,1,1,1,1,0
+78,Reliance Jio,JIO-REF-78954321,Reliance Jio,JIO Mobile Recharge,reliancejio,```,0,1,0,0,0
+79,Ramesh Kumar,Ramesh Kumar,Ramesh Kumar,Ramesh Kumar,Ramesh Kumar,```,1,1,1,1,0
+80,Ritika Chawla,ritika chawla8678@ibl/ICICI/REF456789/PAY 200.,Ritika Chawla,Ritika Chawla,Ritika Chawla,```,0,1,1,1,0
+81,Rohan Verma,Rohan Verma,Rohan Verma,Rohan Verma
+
+Rohan VermaRohan VermaRohan VermaRohan VermaRohan VermaRohan VermaRohan Ver,Rohan Verma,```,1,1,0,1,0
+82,Mahendra Patil,mahendra patil5249@paytm/PAYMENT,Mahendra Patil,Mahendra Patil,mahendra patil5249@paytm,```,0,1,1,0,0
+83,Rajeev Kumar,Rajeev Kumar,Rajeev Kumar,Rajeev KumarRajeev KumarRajeev KumarRajeev KumarRajeev KumarRajeev KumarRaj,Rajeev Kumar,```,1,1,0,1,0
+84,Ramesh Kumar,Ramesh Kumar,Ramesh Kumar,Ramesh Kumar
+
+Ramesh Kumar Ramesh Kumar,Ramesh Kumar,```,1,1,0,1,0
+85,Sneha Nair,sneha nair3442@okaxis,Sneha Nair,Sneha Nair,Sneha Nair,```,0,1,1,1,0
+86,Vivek Iyer,vivek iyer4088@okhdfcbank,Vivek Iyer,Vivek Iyer,vivek iyer4088@okhdfcbank,vivek iyer,0,1,1,0,1
+87,Pantaloons,Pantaloons,Pantaloons,Pantaloons Pantaloons,UPI,```,1,1,0,0,0
+88,Rajesh Kumar Sharma,Rajesh Kumar Sharma,Rajesh Kumar Sharma,Rajesh Kumar SharmaRajesh Kumar SharmaRajesh Kumar SharmaRajesh Kumar SharmaRajesh Kumar SharmaRajesh Kumar SharmaRaj,Rajesh Kumar Sharma,```,1,1,0,1,0
+89,Raghav Bhatia,raghav bhatia4598@upi/Axis Bank,Raghav Bhatia,Raghav Bhatia,Raghav Bhatia,```,0,1,1,1,0
+90,Kiran Mehta,kiran mehta7307@oksbi,Kiran Mehta,Kiran Mehta,Paytm,kiran mehta,0,1,1,0,1
+91,Priya Verma,priya.verma1792@ibl,Priya Verma,Priya Verma,priya.verma1792@ibl,```,0,1,1,0,0
+92,Rajesh Sharma,Rajesh Sharma-Rent,Rajesh Sharma,Rajesh SharmaRajesh SharmaRajesh SharmaRajesh SharmaRajesh SharmaRajesh SharmaRajesh SharmaRajesh Sharma,aarav.kapoor6097@upi,```,0,1,0,0,0
+93,Vijay Kumar,vijay kumar,Vijay Kumar,Vijay Kumar,vijay kumar/INDUSIND,```,1,1,1,0,0
+94,Harshit Bansal,harshit bansal7744@ybl,Harshit Bansal,Harshit Bansal,Harshit Bansal,```,0,1,1,1,0
+95,Yash Nigam,yash nigam4012@paytm/Paymnt for Groceries - BigBasket/RefID:987654,BigBasket,Yash Nigam,BigBasket,```,0,0,1,0,0
+96,Rohan Verma,Rohan Verma,Rohan Verma,Rohan Verma,Rohan Verma,```,1,1,1,1,0
+97,Vivek Iyer,vivek.iyer3372@ybl,Vivek Iyer,Vivek Iyer,vivek.iyer3372@ybl,vivek.iyer3372@ybl,0,1,1,0,0
+98,Amit Sharma,Amit Sharma,Amit Sharma,Amit Sharma,Amit Sharma,```,1,1,1,1,0
+99,Apoorva Singh,apoorva singh7504@okhdfcbank,Oprava Singh,Apoorva SinghApoorva SinghApoorva SinghApoorva SinghApoorva SinghApoorva SinghApo,A poorva singh7504@okhdfcbank,```,0,0,0,0,0
+100,Nikhil Arora,Nikhil Arora 5533 @ okaxis,Nikhil Arora,Nikhil Arora,nikhil arora5533@okaxis/Grocery,```,0,1,1,0,0
+101,Priya Sharma,Priya Sharma,Priya Sharma,Priya Sharma,Priya Sharma,```,1,1,1,1,0
+102,Shivam Kumar,Shivam K/UPI ID: shivam kumar789@paytm,Shivam Kumar,Shivam Kumar Shivam Kumar Shivam Kumar Shivam Kumar Shivam Kumar Shivam Kumar Shivam Kumar Shivam Kumar Shivam Kumar Shivam Kumar Shiv,shivam kumar789@paytm,```,0,1,0,0,0
+103,Ramesh Kumar,Ramesh Kumar,Ramesh Kumar,Ramesh Kumar,Ramesh Kumar,```,1,1,1,1,0
+104,Nikhil Arora,Nikhil Arora9452@upi,Ramesh Kumar,Ramesh KumarNikhil Arora,Nikhil Arora,```,0,0,0,1,0
+105,Ramesh Kumar,Ramesh Kumar,Ramesh Kumar,Ramesh Kumar,Ramesh Kumar,```,1,1,1,1,0
+106,Rajesh Sharma,Rajesh Sharma,Rajesh Sharma,Rajesh SharmaRajesh SharmaRajesh SharmaRajesh SharmaRajesh SharmaRajesh SharmaRajesh SharmaRajesh Sharma,Rajesh Sharma,```,1,1,0,1,0
+107,Arjun Sharma,arjun.sharma79@upi,Arjun Sharma,Arjun Sharma
+
+
+Arjun Sharma,arjun.sharma79@upi,```,0,1,0,0,0
+108,Pooja Batra,Pooja Batra,Pooja Batra,Pooja BatraPooja Batra
+
+Pooja BatraPooja BatraThe payee's name in this transaction is Poo,Pooja Batra,Pooja Batra,1,1,0,1,1
+109,Ritika Chawla,RITIKA CHAWLA9382@PAYTM/STATE BANK OF INDIA/SBIN0001234/,Ritika Chawla,Ritika Chawla,RITIKA CHAWLA,RITIKA CHAWLA,0,1,1,1,1
+110,Ankit Gupta,Ankit Gupta5968@okaxis,Ankit Gupta,Ankit Gupta,Ankit Gupta,```,0,1,1,1,0
+111,Mahendra Patil,mahendra patil,Mahendra Patil,Mahendra Patil,mahendra patil,mahendra patil,1,1,1,1,1
+112,arjun verma,arjun verma789@upi,BigBasket,Arjun Verma
+
+Arjun Verma,arjun verma789@upi,```,0,0,0,0,0
+113,Rohan Verma,Rohan Verma,Rohan Verma,Rohan Verma,Rohan Verma,```,1,1,1,1,0
+114,Nikhil Arora,nikhil arora8194@okaxis,Nikhil Arora,Nikhil Arora,nikhil arora8194@okaxis,**nikhil arora**,0,1,1,0,0
+115,Nandini Roy,Nandini Roy,Nandini Roy,Nandini RoyNandini RoyNandini RoyNandini RoyNandini RoyNandini RoyNandini RoyNandini Roy,Nandini Roy,```,1,1,0,1,0
+116,Arjun Sharma,arjun.sharma1992@upi/HDFC BANK/REF:Bill Payment/Only Rs 1250.0,Arjun Sharma,Arjun Sharma,arjun.sharma1992@upi,```,0,1,1,0,0
+117,Shreya Sharma,Shreya Sharma,Shreya Sharma,Mahendra Patil,Shreya Sharma,**Shreya Sharma**,1,1,0,1,0
+118,Rohan Verma,Rohan Verma,Rohan Verma,Rohan Verma
+
+Rohan Verma,Rohan Verma,```,1,1,0,1,0
+119,Shivani Das,shivani das6328@paytm,Shivani Das,Shivani Das,shivani das,```,0,1,1,1,0
+120,Isha Menon,isha menon6909@paytm/PAYMENT FOR ONLINE CLASS FEES - URGENT,Isha Menon,Isha Menon,isha menon6909@paytm,```,0,1,1,0,0
+121,Rajeev Kumar,Rajeev Kumar,Rajeev Kumar,Rajeev KumarRajeev KumarRajeev KumarRajeev KumarRajeev KumarRajeev KumarRaj,Rajeev Kumar,```,1,1,0,1,0
+122,Dominos Pizza,Dominos Pizza,Domino's Pizza,Dominos PizzaTXN,Domino's Pizza,```,1,0,0,0,0
+123,Ritika Chawla,ritika chawla413@paytm/Grocery bill - BigBasket/ICICI Bank,Ritika Chawla,Ritika Chawla,BigBasket,```,0,1,1,0,0
+124,DMart,PMT EXPRESS,DMart,DMART-HYDDMART-HYD,DMART@ICICIBANK,```,0,1,0,0,0
+125,Reliance Fresh,arjun reddy7583@ibl/Grocery bill - Reliance Fresh/REF TXN ID 89765,Reliance Fresh,Arjun Reddy,Reliance Fresh,```,0,1,0,1,0
+126,Aarav Kapoor,Aarav Kapoor,Arav Kapoor,Aarav Kapoor,Aarav Kapoor,**Aarav Kapoor**,1,0,1,1,0
+127,Sneha Nair,Sneha Nair,Vishal Nair,Sneha Nair,Sneha Nair,Sneha Nair,1,0,1,1,1
+128,Rohan Verma,Rohan Verma,Rohan Verma,Rohan Verma
+
+Rohan Verma,rohanv78@ibl,```,1,1,0,0,0
+129,Vivek Iyer,vivek iyer251@upi,Vivek Iyer,Vivek Iyer,vivek iyer251@upi,vivek iyer251@upi,0,1,1,0,0
+130,Arjun Reddy,arjun.reddy5399@paytm/PMT To extract the payee name from the given transaction narration, I will focus on identifying,Arjun Reddy,Arjun Reddy,Arjun Reddy,```,0,1,1,1,0
+131,Apollo Pharmacy,Apollo Pharmacy,Apollo Pharmacy,Apollo Pharmacy
+
+The payee of the transaction is Apollo Pharmacy,Apollo Pharmacy,```,1,1,0,1,0
+132,Vivek Iyer,Vivek Iyer,Vivek Iyer,Vivek Iyer,Vivek Iyer,```,1,1,1,1,0
+133,Raseel Khan,RASEEL KHAN9016@OKSBI/REF23456789,Raseel Khan,Raseel KhanMobile RechargeRaseel KhanRaseel KhanRaseel KhanRaseel KhanRaseel KhanRaseel KhanR,RASEEL KHAN,```,0,1,0,1,0
+134,Neha Kulkarni,Neha Kulkarni8897@okaxis/ICICI Bank/REF-492857/Express Payment,Neha Kulkarni,Neha Kulkarni,Neha Kulkarni,```,0,1,1,1,0
+135,Raseel Khan,Raseel Khan9142@upi/PMT,Raseel Khan,Raseel Khan,Raseel Khan,```,0,1,1,1,0
+136,Ritika Chawla,Ritika Chawla,Ritika Chawla,Ritika Chawla,Ritika Chawla,```,1,1,1,1,0
+137,Arjun Verma,arjun.verma78@paytm,Arjun Verma,Arjun Verma Paytm Ref Arjun Verma Paytm Via UPI Arjun Verma Paytm Ref Arjun Verma Paytm Arjun Ver,arjun.verma78@paytm/REF 87654321/Axis Bank Ltd,```,0,1,0,0,0
+138,Reliance Fresh,meera joshi4761@ybl,Reliance Fresh,Meera Joshi,Meera joshi4761@ybl/Grocery,```,0,1,0,0,0
+139,Reliance Fresh,manojyadav6505@ybl,Reliance Fresh,Manoj Yadav,Mojayadav6505@ybl/Grocery,```,0,1,0,0,0
+140,Meera Joshi,Meera Joshi,Meera Joshi,Meera JoshiGroceriesMeera JoshiMeera JoshiMeera JoshiMeera JoshiMeera JoshiMeera JoshiMeera,Meera Joshi,Meera Joshi,1,1,0,1,1
+141,Rohit Tiwari,Rohit Tiwari6200@upi/Axis Bank/Payment to friend - lunch/RefNo: 8765,Rohit Tiwari,Rohit Tiwari
+
+Rohit Tiwari,Rohit Tiwari,```,0,1,0,1,0
+142,BigBasket,rohit tiwari3726@okhdfcbank,Rohit Tiwari,RohtiwatiRohit Tiwari,BigBasket,```,0,0,0,1,0
+143,Meera Joshi,meera joshi3652@ybl,Meera Joshi,Meera Joshi,meera joshi,meera joshi,0,1,1,1,1
+144,Reliance Fresh,shivani das1597@okaxis,Reliance Fresh,Shivani Das,Shivani Das,```,0,1,0,0,0
+145,Amit Sinha,amit sinha485@okaxis,amit sinha,Amit Sinha,amit sinha485@okaxis,```,0,1,1,0,0
+146,Neha Kulkarni,neha kulkarni7387@ibl/Grocery bill-REF TXN ID 9876543,Neha Kulkarni,Neha Kulkarni,neha kulkarni7387@ibl/Grocery,```,0,1,1,0,0
+147,Rajeev Kumar,Rajeev,Rajeev Kumar,Rajeev Rajeev,Rajeev.kumar8921@upi,```,0,1,0,0,0
+148,Rohan Verma,Rohan Verma,Rohan Verma,Rohan Verma,Rohan Verma,```,1,1,1,1,0
+149,Ramesh Kumar,Ramesh Kumar,Ramesh Kumar,Ramesh Kumar,Ramesh Kumar,```,1,1,1,1,0
+150,Arjun Sharma,arjun.sharma87@paytm,Arjun Sharma,Arjun Sharma
+
+Arjun SharmaArjun SharmaThe payee of this transaction is Arjun SharmaArjun SharmaArjun SharmaArjun SharmaArjun Sharma,Arjun Sharma,```,0,1,0,1,0
+151,MakeMyTrip,MakeMyTrip,MakeMyTrip,MakeMyTrip,MakeMyTrip,```,1,1,1,1,0
+152,Rahul Sharma,rahul.sharma8374@oksbi,Rahul Sharma,Rahul SharmaThe payee name in this transaction is Rahul Sharma,Rahul Sharma,```,0,1,0,1,0
+153,Isha Menon,isha menon,Isha Menon,Isha Menon,Isha Menon,```,1,1,1,1,0
+154,Daulat Rao,daulat rao8286@okaxis,Daulat Rao,Daulat Rao,daulat rao,**Answer:** daulat rao,0,1,1,1,0
+155,Air India,AIR INDIA,Air India,Air India,AIR INDIA,```,1,1,1,1,0
+156,Arjun Sharma,arjun.sharma92@paytm,Arjun Sharma,Arjun Sharma
+
+Arjun Sharma,arjun.sharma92@paytm,```,0,1,0,0,0
+157,Arjun Singh,arjun.singh789@paytm,Arjun Singh,Arjun Singh,arjun.singh789@paytm,```,0,1,1,0,0
+158,Isha Menon,isha menon7760@okhdfcbank,Isha Menon,Isha Menon,isha menon7760@okhdfcbank,```,0,1,1,0,0
+159,Rohan Verma,Rohan Verma/AXISBANK/512888990012/UPI123a45,Rohan Verma,Rohan Verma,Harshit Bansal,**harshit bansal**,0,1,1,0,0
+160,Rajesh Kumar,Rajesh Kumar,Rajesh Kumar,Rajesh Kumar,daulat rao,```,1,1,1,0,0
+161,Sneha Nair,Sneha Nair,Sneha Nair,Sneha Nair,Sneha Nair,Sneha Nair,1,1,1,1,1
+162,Rajesh Kumar,Rajesh Kumar,Rajesh Kumar,Rajesh Kumar,Raghav Bhatia,,1,1,1,0,0
+163,Grofers India Pvt Ltd,Grofers India Pvt Ltd,Grofers India,Arjun Reddy,ICICI BANK,```,1,0,0,0,0
+164,Mahendra Patil,mahendra patil4939@okhdfcbank,Mahendra Patil,Mahendrapatil,mahendra patil4939@okhdfcbank,```,0,1,0,0,0
+165,Meera Joshi,meera joshi4053@okaxis/PAYMENT FOR SPLIT BILL-DINNER/ICICI Bank,Meera Joshi,Meera Joshi,Meera joshi4053@okaxis,```,0,1,1,0,0
+166,Rohan Verma,Rohan Verma,Rohan Verma,Rohan Verma,Rohan Verma,```,1,1,1,1,0
+167,Vivek Iyer,Groceries,Vivek Iyer,Vivek Iyer,vivek iyer1022@okhdfcbank,vivek iyer,0,1,1,0,1
+168,Tanvi Desai,tanvi desai5348@oksbi/OKSBI/RefNo-23478912/PAYMENT,Tanvi Desai,Tanvi Desai,tanvi desai5348@oksbi,```,0,1,1,0,0
+169,Reliance Smart,Reliance Retail,Shivani Das,Shivani Das,Shivani das,```,0,0,0,0,0
+170,Manoj Yadav,manoj yadav,Manoj Yadav,Manoj Yadav,Moj Yadav,```,1,1,1,0,0
+171,Flipkart,Flipkart,Flipkart,FlipkartUPI/Flipkart,Flipkart,```,1,1,0,1,0
+172,Aarav Sharma,Aarav Sharma,Arav Sharma,Aarav Sharma,Aarav Sharma,```,1,0,1,1,0
+173,Rahul Sharma,Rahul Sharma 8110,Raj,Rahul Sharma,Rahul Sharma,```,0,0,1,1,0
+174,Rohan Verma,Rohan Verma,Rohan Verma,Rohan Verma,Rohan Verma,```,1,1,1,1,0
+175,Reliance Fresh,arjun.sharma92@paytm,Arjun Sharma,Arjun Sharma
+
+Arjun Sharma,arjun.sharma92@paytm/Grocery,```,0,0,0,0,0
+176,Rohit Tiwari,Rohit Tiwari2732@okhdfcbank/HDFC BANK/RefNo-PMT234567,Rohit Tiwari,Rohit Tiwari,Rohit Tiwari,```,0,1,1,1,0
+177,Vivek Iyer,Vivek Iyer623@ibl,Vivek Iyer,Vivek Iyer,Vivek Iyer623@ibl,```,0,1,1,0,0
+178,Rajesh Kumar,Rajesh Kumar,Rajesh Kumar,Rajesh KumarRajesh KumarRajesh KumarRajesh KumarRajesh KumarRajesh KumarRajesh KumarRajesh Kumar,mahendra patil,```,1,1,0,0,0
+179,Rohit Tiwari,rohit tiwari6345@okaxis/ICICI/RefNo-2947583210/,Rohit Tiwari,RohtiwatiRohit Tiwari,rohit tiwari6345@okaxis,```,0,1,0,0,0
+180,Lakshmi Pillai,Lakshmi Pillai3846@ibl/RefNo-202411061452/ONLY,Lakshmi Pillai,Lakshmi Pillai,Lakshmi Pillai,Lakshmi Pillai,0,1,1,1,1
+181,Priyanka Sharma,priyanka sharma,Priyanka Sharma,Priyanka SharmaPriyanka SharmaThe payee of this transaction is Priyanka SharmaPriyanka SharmaPriyanka SharmaPriyanka SharmaPri,priyanka sharma,**priyanka sharma**,1,1,0,1,0
+182,Rajeev Sharma,rajeev.sharma92@paytm/Payment for Groceries - BigBasket,Rajeev Sharma,Rajeev SharmaRajeev SharmaRajeev SharmaRajeev SharmaRajeev SharmaRajeev SharmaRaj,rajeev.sharma92@paytm,rajeev.sharma92@paytm,0,1,0,0,0
+183,Aman Sharma,Aman Sharma,Amman Sharma,Aman Sharma
+
+Aman Sharma,Aman Sharma,```,1,0,0,1,0
+184,Rohit Tiwari,Rohit Tiwari,Rohit Tiwari,Rohit Tiwari,Rohit Tiwari,```,1,1,1,1,0
+185,Rohan Sharma,Rohan Sharma,Rohan Sharma,Rohan SharmaRohan SharmaRohan SharmaRohan SharmaRohan SharmaRohan SharmaRohan SharmaRohan SharmaRohan SharmaRohan SharmaRohan,Rohan Sharma,**Rohan Sharma**,1,1,0,1,0
+186,Manoj Yadav,manoj yadav512@okaxis/ICICI BANK/RefNo-20231116145,Manoj Yadav,Manoj Yadav,manoj yadav,manoj yadav,0,1,1,1,1
+187,Ola,OLA MOBILITY @ AXIS BANK,Ola,Ola Moba,Ola Mobility,Ola,0,1,0,0,1
+188,Shivani Das,Shivani Das1031@okaxis/ICICI Bank/RefNo-IMPS2023110614,Shivani Das,Shivani Das,Shivani Das,Shivani Das,0,1,1,1,1
+189,Gaurav Malhotra,gaurav.malhotra3650@upi,Gaurav Malhotra,Gaurav Malhotra,gaurav.malhotra3650@upi,```,0,1,1,0,0
+190,Shreya,Shreya,Shreya,Nikhil Arora,Shreya,**Answer:**,1,1,0,1,0
+191,Tanvi Desai,tanvi desai1525@ybl,Tanvi Desai,Tanvi Desai,tanvi desai1525@ybl,tanvi desai,0,1,1,0,1
+192,BigBasket,amit sinha2748@upi/ICICI/RefNo-XYZ123/Groceries - BigBasket,BigBasket,Amit Sinha,Amit Sinha,```,0,1,0,0,0
+193,Tanvi Desai,Tanvi Desai,Tanvi Desai,Tanvi Desai,Tanvi Desai,```,1,1,1,1,0
+194,Harshit Bansal,harshit bansal4933@okhdfcbank/HDFC BANK/RefNo-20231116,Harshit Bansal,Harshit Bansal,Harshit Bansal,```,0,1,1,1,0
+195,Grofers,Grofers India Pvt Ltd,Grofers India,Shivani DasGrofers India Pvt Ltd,Grofers India Pvt Ltd,```,0,0,0,0,0
+196,Priya Verma,Priya Verma2940@okhdfcbank/HDFC Bank/RefNo-234789/TRF,Priya Verma,Priya Verma,Priya Verma,```,0,1,1,1,0
+197,Rajesh Kumar Sharma,rsharma789@paytm,Rajesh Kumar Sharma,Rajesh Kumar SharmaRajesh Kumar SharmaRajesh Kumar SharmaRajesh Kumar SharmaRajesh Kumar SharmaRajesh Kumar SharmaRaj,ICICI,```,0,1,0,0,0
+198,Aarav Kapoor,Aarav Kapoor,Arav Kapoor,Aarav Kapoor
+
+Aarav Kapoor,Aarav Kapoor,```,1,0,0,1,0
+199,Arjun Sharma,arjun.sharma789,Reliance Fresh,Arjun SharmaReliance FreshArjun SharmaArjun SharmaArjun SharmaArjun SharmaArjun SharmaArjun SharmaArjun SharmaArjun SharmaArjun,Reliance Fresh,```,0,0,0,0,0
+200,Shivani Das,Shivani Das,Shivani Das,Shivani Das,Shivani Das,```,1,1,1,1,0
+201,Ritika Chawla,ritika chawla9167@ybl,Ritika Chawla,Ritika Chawla,Ritika Chawla,```,0,1,1,1,0
+202,Priya Verma,Priya Verma8680@okhdfcbank/HDFC Bank/REF-IMPS2023111,Priya Verma,Priya Verma,Priya Verma,```,0,1,1,1,0
+203,Mahendra Patil,mahendra patil5756@okaxis/PMT,Mahendra Patil,Mahendra Patil,mahendra patil,mahendra patil,0,1,1,1,1
+204,Vivek Iyer,vivek iyer,Vivek Iyer,Vivek Iyer,vivek iyer,```,1,1,1,1,0
+205,Isha Menon,Isha Menon,Isha Menon,Isha Menon
+
+Isha Menon,Isha Menon,```,1,1,0,1,0
+206,Isha Menon,isha menon1826@okaxis,Isha Menon,Isha Menon,menon1826@okaxis,```,0,1,1,0,0
+207,Reliance Jio,Jio Recharge,Reliance Jio,Jio Recharge
+
+Jio RechargeThe payee of this transaction is Jio RechargeJio RechargeThis is the payee of this transaction,reliancejio@upi/Jio Recharge/RefNo:9876543210/AXISB/**L234567890123456789,**reliancejio**,0,1,0,0,0
+208,Apoorva Singh,Apoorva Singh,Apoorva Singh,Apoorva Singh,Apoorva Singh,```,1,1,1,1,0
+209,Arjun Sharma,arjun.sharma89@paytm,Arjun Sharma,Arjun Sharma
+
+
+Arjun Sharma,arjun.sharma89@paytm,```,0,1,0,0,0
+210,Ajio,AJIO,AJIO,AJIO,AJIO,```,1,1,1,1,0
+211,Ritika Chawla,RITIKA CHAWLA5979@okhdfcbank/REF-789456123/,Ritika Chawla,Ritika Chawla,RITIKA CHAWLA5979@okhdfcbank,```,0,1,1,0,0
+212,Isha Menon,isha menon7594@paytm,Isha Menon,Isha Menon,menonishaisha,```,0,1,1,0,0
+213,Tanvi Desai,tanvi desai7980@ibl,Tanvi Desai,Tanvi Desai,Tanvi Desai7980@IBL/REF 456789,```,0,1,1,0,0
+214,Rajeev Kumar,rajeev.kumar78,Rajeev Kumar,Rajeev Kumar,REF-Grocery,```,0,1,1,0,0
+215,Meera Joshi,meera joshi8361@upi/ICICI/REF:PAYMENT FOR ONLINE CLASSES/123456,Meera Joshi,Meera Joshi,meera joshi8361@upi,```,0,1,1,0,0
+216,Kiran Mehta,Kiran Mehta,Kiran Mehta,Kiran Mehta,Kiran Mehta,**Kiran Mehta**,1,1,1,1,0
+217,Lakshmi Pillai,lakshmi pillai3814@oksbi,Lakshmi Pillai,Lakshmi Pillai,lakshmi pillai3814@oksbi,```,0,1,1,0,0
+218,Rohan Verma,Rohan Verma,Rohan Verma,Rohan VermaRohan VermaRohan VermaRohan VermaRohan VermaRohan VermaRohan VermaRohan Verma,Rohan Verma/PMT via PhonePe/ROHAN.VERMA789@UPI/ONLY RS 250.00//AXLF2,Rohan Verma,1,1,0,0,1
+219,Pooja Batra,Pooja Batra,Pooja Batra,Pooja Batra
+
+Pooja Batra,Pooja Batra,Pooja Batra,1,1,0,1,1
+220,Priya Verma,priya verma4317@ybl,Priya Verma,Priya VermaPriya Verma,priya verma4317@ybl,```,0,1,0,0,0
+221,Kiran Mehta,Kiran Mehta2444@okhdfcbank/Groceries,Kiran Mehta,Kiran Mehta,BigBasket,```,0,1,1,0,0
+222,Rohit Tiwari,rohit tiwari4265@okhdfcbank/HDFC BANK/RefNo-IMPS20231,Rohit Tiwari,Rohti Tiwari,rohit tiwari4265@okhdfcbank,```,0,1,0,0,0
+223,Rohan Verma,Rohan Verma,Rohan Verma,Rohan VermaRohan VermaRohan VermaRohan VermaRohan VermaRohan VermaRohan VermaRohan Verma,Rohan Verma,```,1,1,0,1,0
+224,Rohan Verma,Rohan Verma,Rohan Verma,Rohan VermaGoogle VermaRohan VermaRohan VermaRohan VermaRohan VermaRohan VermaRohan VermaR,Rohan Verma,**Rohan Verma**,1,1,0,1,0
+225,Isha Menon,isha menon,Isha Menon,Isha Menon,isha menon847@upi,```,1,1,1,0,0
+226,Shivani Das,shivani das8229@ibl/ICICI BANK,Shivani Das,Shivani Das,shivani das,```,0,1,1,1,0
+227,Lakshmi Pillai,lakshmi pillai9831@okaxis/ICICI/TXN ID:8529374651,Lakshmi Pillai,Lakshmi Pillai,Lakshmi Pillai,```,0,1,1,1,0
+228,Nykaa,Nykaa,Nykaa,Nykaa Cosmetics,Nykaa,```,1,1,0,1,0
+229,Rahul Sharma,Rahul Sharma 6275@OKAxis,Rahul Sharma,Rahul Sharma,Rahul Sharma,```,0,1,1,1,0
+230,Rohan Verma,Rohan Verma,Rohan Verma,Saurabh JainRohan Verma,Rohan Verma,Rohan Verma,1,1,0,1,1
+231,Rajesh Kumar Sharma,Rajesh Kumar Sharma,Rajesh Kumar Sharma,Rajesh Kumar Sharma
+
+Rajesh Kumar SharmaRajesh Kumar SharmaRajesh Kumar SharmaRajesh Kumar SharmaRajesh Kumar SharmaR,Rajesh Kumar Sharma,```,1,1,0,1,0
+232,Ramesh Kumar,Ramesh Kumar,Ramesh Kumar,Ramesh Kumar,Ramesh Kumar,```,1,1,1,1,0
+233,Rohan Varma,Rohan Varma,Rohan Varma,Rohan VarmaHarshit BansalRohan VarmaRohan VarmaRohan VarmaRohan VarmaRohan VarmaRohan Var,Harshit Bansal,```,1,1,0,0,0
+234,Sneha Nair,Sneha Nair5934@ybl/P2P PAY via UPI/RefID:XYZ1234/08,Vipin Nair,Sneha Nair,Sneha Nair5934@ybl,Sneha Nair,0,0,1,0,1
+235,Rajesh Kumar,rajesh kumar789@paytm,Rajesh Kumar,Rajesh Kumar Rajesh Kumar,Rajesh Kumar,```,0,1,0,1,0
+236,Vivek Iyer,vivek iyer2344@upi,Vivek Iyer,Vivek Iyer,vivek iyer,```,0,1,1,1,0
+237,Priya Verma,Priya Verma,Priya Verma,Priya Verma,Priya Verma,Priya Verma,1,1,1,1,1
+238,Saurabh Jain,Saurabh Jain8148@okhdfcbank/RefNo-234567/UPI Transaction,Saurabh Jain,Saurabh Jain,Saurabh Jain8148@okhdfcbank,```,0,1,1,0,0
+239,Rajesh Kumar,Rajesh Kumar,Rajesh Kumar,Rajesh Kumar,Rajesh Kumar,```,1,1,1,1,0
+240,Arjun Singh,arjun.singh78@upi/PMT To extract the payee name from the given transaction narration and return it in a specific format,Arjun Singh,Arjun Singh
+
+Arjun Singh,arjun.singh78@upi/PMT,**arjun.singh78@upi**,0,1,0,0,0
+241,Isha Menon,isha menon2317@ybl,Isha Menon,Isha Menon,isha menon2317@ybl,```,0,1,1,0,0
+242,Neha Sharma,Neha Sharma-Rent,Neha Sharma,Neha Sharma,pooja.batra3132@ybl,```,0,1,1,0,0
+243,Neha Kulkarni,Neha Kulkarni2305@oksbi/INDUSIND BANK/REF-78954123/,Indusind Bank,Neha KulkarniThe payee in this transaction is Neha KulkarniNeha KulkarniNeha Kulk,Neha Kulkarni,```,0,0,0,1,0
+244,Lakshmi Pillai,lakshmi pillai5467@okaxis/grocery bill okaxis/78945612301,Lakshmi Pillai,Lakshmi Pillai,lakshmi pillai5467@okaxis/Grocery,lakshmi pillai,0,1,1,0,1
+245,Tanvi Desai,HDFC Bank Ltd,Groceries,Tanvi DesaiThe payee of this transaction is Tanvi Desai,Tanvi Desai,```,0,0,0,1,0
+246,Rajesh Kumar,Rajesh Kumar,Rajesh Kumar,Rajesh KumarRajesh Kumar
+
+Rajesh KumarRajesh Kumar,ICICI1234567890abcdefghijklmn,```,1,1,0,0,0
+247,Ramesh Kumar,Ramesh Kumar,Ramesh Kumar,Ramesh KumarRamesh Kumar
+
+Please note the payee name Ramesh Kumar from Ramesh KumarRamesh KumarRamesh Kumar,Ramesh Kumar,```,1,1,0,1,0
+248,Ritika Chawla,RITU KUMAR SINGH,Ritika Chawla,Ritiika Chawla,RITIKA CHAWLA,RITIKA CHAWLA,0,1,0,1,1
+249,Arjun Reddy,arjun reddy7700@oksbi/Grocery bill paid via GPay - Ref no: 987654,Arjun Reddy,Arjun ReddyThe payee of this transaction is Arjun Reddy,arjun reddy7700@oksbi/Grocery,```,0,1,0,0,0
+250,Tanvi Desai,tanvi desai8166@ibl/PMT REF:Groceries-234/HDFC Bank,tanvi desai,Tanvi DesaiThe payee name in this transaction is Tanvi Desai,Tanvi Desai,```,0,1,0,1,0
+251,Arjun Sharma,arjun.sharma789@paytm/PMT To extract the payee name from the given transaction narration, I will identify and return only,Arjun Sharma,Arjun Sharma
+
+Arjun Sharma
+
+Note:Payee name is extracted from the transaction narration of Arjun Sharma,Arjun Sharma,```,0,1,0,1,0
+252,Manoj Yadav,manoj yadav2345@upi,Manoj Yadav,Manoj Yadav,manoj yadav2345@upi,manoj yadav,0,1,1,0,1
+253,Manoj Yadav,manoj yadav4309@ybl,Manoj Yadav,Manoj YadavMobileRechargeHDFCManojYadav,M Anjali,manoj yadav,0,1,0,0,1
+254,Tanvi Desai,tanvi desai7357@oksbi,Tanvi Desai,Tanvi DesaiThe payee of this transaction is Tanvi Desai,tanvi desai,tanvi desai,0,1,0,1,1
+255,Arjun Sharma,arjun.sharma92,Reliance Fresh,Arjun SharmaReliance FreshArjun SharmaReliance FreshArjun SharmaReliance FreshArjun SharmaReliance FreshArjun SharmaReliance FreshArjun,arjun.sharma92@upi/Grocery,```,0,0,0,0,0
+256,Aarav Kapoor,Aarav Kapoor767@ibl/HDFC Bank/RefNo-234789/PMT to friend,Friend,Aarav Kapoor,Aarav Kapoor,```,0,0,1,1,0
+257,Rohit Tiwari,Rohit Tiwari,Rohit Tiwari,Rohit TiwariRohit TiwariRohit TiwariRohit TiwariRohit TiwariRoh,Rohit Tiwari,```,1,1,0,1,0
+258,Lakshmi Pillai,lakshmi pillai8016@okhdfcbank/Pay to Lakshmi for Diwali gifts/HDFC Bank,Lakshmi Pillai,Lakshmi Pillai,Lakshmi Pillai,Lakshmi pillai,0,1,1,1,1
+259,Rajesh Kumar,Rajesh Kumar7891@paytm/REF1234567890/Axis Bank Ltd,Rajesh Kumar,Rajesh KumarRajesh KumarRajesh KumarRajesh KumarRajesh KumarRajesh KumarRajesh KumarRajesh Kumar,Rajesh Kumar7891@paytm,```,0,1,0,0,0
+260,Priya Sharma,Priya Sharma,Priya Sharma,Priya Sharma,Priya Sharma,```,1,1,1,1,0
+261,Rahul Sharma,Rahul Sharma 6344 @ ybl,Rahul Sharma,Rahul Sharma,rahul.sharma6344@ybl/Mobile Recharge - Airtel Prepaid/AXISB/512345678901/UPI,**rahul.sharma6344@ybl**,0,1,1,0,0
+262,Ramesh Kumar,Ramesh Kumar,Ramesh Kumar,Ramesh Kumar,Ramesh Kumar,```,1,1,1,1,0
+263,Neha Kulkarni,Neha Kulkarni7433@ibl/P2P TXN - Groceries/HDFC000000,Groceries,Neha KulkarniThe payee of this transaction is Neha KulkarniNeha KulkarniNeha Kulk,Neha Kulkarni,```,0,0,0,1,0
+264,Sneha Nair,Sneha Nair4636@okhdfcbank/REF-BillPayment/HDFC Bank/789456,Bill Payment,Sneha Nair,Sneha Nair4636@okhdfcbank,```,0,0,1,0,0
+265,Sneha Nair,Sneha Nair,For groceries,Sneha Nair,Sneha Nair,```,1,0,1,1,0
+266,Amit Sinha,amit sinha5517@okaxis,Amit Sinha,Amit Sinha,Amit Sinha,```,0,1,1,1,0
+267,Arjun Sharma,Arjun Sharma,Arjun Sharma,Arjun Sharma,Arjun Sharma,```,1,1,1,1,0
+268,Rohan Verma,Rohan Verma,Rohan Verma,Rohan Verma,Rohan Verma,```,1,1,1,1,0
+269,Rohan Verma,Rohan Verma,Rohan Verma,Rohan Verma,Rohan Verma,```,1,1,1,1,0
+270,Rajesh Kumar Sharma,Rajesh Kumar Sharma IDFCF BillPay-EL004567 202411161432,Rajesh Kumar Sharma,Rajesh Kumar Sharma,Rajesh Kumar Sharma,```,0,1,1,1,0
+271,Isha Menon,Isha Menon,Isha Menon,Isha Menon
+
+Isha Menon,Isha Menon,```,1,1,0,1,0
+272,BookMyShow,BookMyShow,BookMyShow,BookMyShow,BookMyShow,```,1,1,1,1,0
+273,Isha Menon,isha menon8805@oksbi/ICICI/RefNo-202311071456,Isha Menon,Isha Menon,Isha Menon,```,0,1,1,1,0
+274,Sneha Nair,S. NAIR,Sneha Nair,S.NaireeS.Nairee,S. NAIR,```,0,1,0,0,0
+275,Aarav Kapoor,Aarav Kapoor,Arav Kapoor,Aarav Kapoor,Aarav Kapoor,```,1,0,1,1,0
+276,Gaurav Malhotra,gaurav malhotra1453@paytm,Gaurav Malhotra,Gaurav Malhotra,gaurav malhotra1453@paytm/TRF,```,0,1,1,0,0
+277,Rohan Sharma,Rohan Sharma,Rohan Sharma,Rohan SharmaRohan SharmaRohan SharmaRohan SharmaRohan SharmaRohan SharmaRohan SharmaRohan SharmaRohan SharmaRohan SharmaRohan,Rohan Sharma,**Rohan Sharma**,1,1,0,1,0
+278,Reliance Fresh,arjun.sharma92@paytm/Grocery bill - Reliance Fresh/123456789012,Reliance Fresh,Arjun SharmaUma Arjun SharmaReliance FreshGrocery Ushar Uma PaytmArjun SharmaUma Reliance FreshGrocery Usha Pay,Reliance Fresh,```,0,1,0,1,0
+279,Raghav Bhatia,Shagun/HDFC Bank/512899765432/UPI45678901,Raghav Bhatia,Raghav Bhatia,Shagun,,0,1,1,0,0
+280,Rohit Tiwari,rohit tiwari7062@oksbi,Rohit Tiwari,Rohit Tiwari,rohit tiwari7062@oksbi,```,0,1,1,0,0
+281,Harshit Bansal,harshit bansal3636@okhdfcbank,Harshit Bansal,Harshit Bansal,Harshit Bansal,```,0,1,1,1,0
+282,Meera Joshi,Meera Joshi,Meera Joshi,Meera JoshiMeera JoshiMeera JoshiMeera JoshiMeera JoshiMeera JoshiMeera JoshiMeera Joshi,Meera Joshi,**Meera Joshi**,1,1,0,1,0
+283,Apoorva Singh,apoorva singh8305@ibl,apoorva singh,Apoorva Singh,apoorva singh8305@ibl,```,0,1,1,0,0
+284,Swiggy,Swiggy,Swiggy,Swiggy,PMT,```,1,1,1,0,0
+285,Arjun Sharma,arjun.sharma78@upi,Arjun Sharma,Arjun Sharma Arjun Sharma will be the payee name
+
+Arjun Sharma Arjun Sharma will be the payee name
+
+Arjun SharmaArjun Sharma,arjun.sharma78@upi,```,0,1,0,0,0
+286,BigBasket,yash nigam762@oksbi/Groceries,BigBasket,Yash Nigam,yash nigam762@oksbi,yash nigam,0,1,0,0,0
+287,Aniket Sharma,ANIKET SHARMA,Aniket Sharma,Aniket Sharma
+
+Aniket SharmaANIKET SHARMA,ANIKET SHARMA,**ANIKET SHARMA**,1,1,0,1,0
+288,Reliance Fresh,lakshmi pillai1970@upi/Grocery bill - Reliance Fresh EXPRESS/AXISB/**9283,Reliance Fresh,Lakshmi Pillai,Lakshmi Pillai,```,0,1,0,0,0
+289,Gaurav Malhotra,gaurav malhotra4614@ybl,Gaurav Malhotra,Gaurav Malhotra,Gaurav Malhotra,```,0,1,1,1,0
+290,Ramesh Kumar,Ramesh Kumar,Ramesh Kumar,Ramesh Kumar,Ramesh Kumar,```,1,1,1,1,0
+291,Arjun Sharma,arjun.sharma78@paytm,Arjun Sharma,Arjun Sharma Paytm Arjun Sharma PaytmArjun Sharma Paytm Arjun Sharma Paytm Arjun Sharma Paytm Arjun Sharma Paytm Arjun,arjun.sharma78@paytm,```,0,1,0,0,0
+292,Harshit Bansal,harshit bansal9090@oksbi/ICICI BANK,Harshit Bansal,Harshit Bansal,Harshit Bansal,```,0,1,1,1,0
+293,Rohan Verma,Rohan Verma,Rohan Verma,Rohan Verma
+
+Rohan Verma,Rohan Verma,```,1,1,0,1,0
+294,Amit Sinha,Amit Sinha9237@paytm/UBINAR0000001/For Diwali Gifts - Urgent,Amit Sinha,Amit Sinha,Amit Sinha9237@paytm,```,0,1,1,0,0
+295,Manoj Yadav,manoj yadav6399@paytm,Manoj Yadav,Manoj Yadav,manoj yadav6399@paytm,manoj yadav,0,1,1,0,1
+296,Amit Sinha,Amit Sinha6099@okaxis,Amit Sinha,Amit Sinha,Theobroma, Pune,Amit Sinha,0,1,1,0,1
+297,Shreya Patel,Shreya Patel,Shreya Patel,Meera Joshi,Meera joshi7260@ibl/REF-4567/P2P TXN - Shreya Patel,```,1,1,0,0,0
+298,Tanvi Desai,tanvi desai1151@okaxis/ICICI BANK,Tanvi Desai,Tanvi Desai,Tanvi Desai,tanvi desai,0,1,1,1,1
+299,Rohit Tiwari,Rohit Tiwari8333@okhdfcbank,Rohit Tiwari,Rohit TiwariThe payee name is Rohit Tiwari
+
+Rohit Tiwari,Rohit Tiwari8333@okhdfcbank,```,0,1,0,0,0
+300,Aarav Kapoor,Aarav Kapoor549@okaxis/ICICI Bank/RefNo-202311171456,Arav Kapoor,Aarav Kapoor,Aarav Kapoor549@okaxis,```,0,0,1,0,0
+301,Meera Joshi,meera joshi6151@ibl,Meera Joshi,Meera Joshi,Meera joshi,```,0,1,1,1,0
+302,Rahul Sharma,Rahul Sharma 89,Rahul Sharma,Rahul Sharma,rahul.sharma89@upi,```,0,1,1,0,0
+303,Pooja Batra,Pooja batra958@upi/ Sent to Pooja for Diwali expenses /ICICI,Pooja Batra,Pooja batra,pooja batra958@upi,```,0,1,1,0,0
+304,Rahul Sharma,rahul.sharma1104@paytm/PMT,Rahul Sharma,Rahul Sharma,Rahul Sharma,```,0,1,1,1,0
+305,Harshit Bansal,Harshit Bansal1153@okaxis/REF-GroceryBill/1234567890,Harshit Bansal,Harshit Bansal,Harshit Bansal,Harshit Bansal,0,1,1,1,1
+306,Ramesh Kumar Sharma,Ramesh Kumar Sharma,Ramesh Kumar Sharma,Ramesh Kumar Sharma,Ramesh Kumar Sharma,**Ramesh Kumar Sharma**,1,1,1,1,0
+307,Lakshmi Pillai,lakshmi pillai8529@ibl/PhonePe,Lakshmi Pillai,Lakshmi Pillai,Lakshmi Pillai,```,0,1,1,1,0
+308,Meera Joshi,meera joshi7356@okhdfcbank/Grocery bill-PAYTM/RefID:98765,Meera Joshi,MeJoshiMeera Joshi,meera joshi7356@okhdfcbank,```,0,1,0,0,0
+309,Nykaa,Nykaa,Nykaa,Nykaa,Nykaa,```,1,1,1,1,0
+310,IndiGo Airlines,IndiGo Airlines,IndiGo Airlines,IndiGo AirlinesThe payee of this transaction is IndiGo Airlines,VISA,```,1,1,0,0,0
+311,Rohan Verma,Rohan Verma,Rohan Verma,Rohan Verma,Rohan Verma,```,1,1,1,1,0
+312,Nikhil Arora,Nikhil Arora 4728 @ HDFC Bank,Nilak Arora,Nikhil Arora,nikhil arora4728@upi,```,0,0,1,0,0
+313,Nikhil Arora,Nikhil Arora954@paytm/Payment for Diwali gifts,Nikhil Arora,Nikhil Arora,nikhil arora954@paytm,```,0,1,1,0,0
+314,Ramesh Kumar Sharma,Ramesh Kumar Sharma,Ramesh Kumar Sharma,Ramesh Kumar Sharma,Ramesh Kumar Sharma,**Ramesh Kumar Sharma**,1,1,1,1,0
+315,Rahul Sharma,rahul sharma2268@upi/ICICI Bank/REF-78954123/P2P PAY,Rahul Sharma,Rahul Sharma,rahul sharma2268@upi,```,0,1,1,0,0
+316,Priya Verma,Priya Verma6043@oksbi/TRF/RefNo-789456/PMT to friend,Priya Verma,Priya Verma,Priya Verma,```,0,1,1,1,0
+317,Apoorva Singh,Apoorva Singh2451@oksbi,Apoorva Singh,Apoorva Singh,Apoorva Singh2451@oksbi,```,0,1,1,0,0
+318,Nikhil Arora,nikhil arora5696@ibl/ICICI BANK,NIKHIL ARORA,Nikhil Arora,nikhil arora5696@ibl,```,0,1,1,0,0
+319,Neha Kulkarni,neha kulkarni3217@okhdfcbank,Neha Kulkarni,Neha Kulkarni,neha kulkarni3217@okhdfcbank,```,0,1,1,0,0
+320,Sneha Nair,sneha nair9885@paytm,Sneha Nair,Sneha Nair,Sneha nair9885@paytm,```,0,1,1,0,0
+321,Arjun Sharma,arjun.sharma1995@upi,Arjun Sharma,Arjun SharmaArjun SharmaReturn not applicableArjun SharmaArjun SharmaArjun SharmaArjun SharmaArjun SharmaArjun SharmaArjun SharmaArjun,arjun sharma,```,0,1,0,1,0
+322,Pooja Batra,Pooja Batra,Pooja Batra,Pooja Batra,Pooja Batra,Pooja Batra,1,1,1,1,1
+323,Manoj Yadav,manoj yadav5806@okaxis/ICICI BANK/REF-8976543210/U,Manoj Yadav,Manoj Yadav,manoj yadav5806@okaxis/ICICI BANK/REF-8976543210/UPI,```,0,1,1,0,0
+324,Harshit Bansal,harshit bansal2168@upi,Harshit Bansal,Harshit Bansal,Harshit Bansal2168@upi,```,0,1,1,0,0
+325,Aarav Sharma,Aarav Sharma,Arav Sharma,Aarav Sharma,Aarav Sharma,```,1,0,1,1,0
+326,Arjun Sharma,arjun.sharma78,Arjun Sharma,Arjun Sharma Arvind Arjun Sharma Arjun Sharma Arjun Sharma Arjun Sharma Arjun Sharma Arjun Sharma Arjun Sharma Arjun Sharma Arjun,arjun.sharma78@upi,```,0,1,0,0,0
+327,Saurabh Jain,Saurabh Jain9344@okhdfcbank,Groceries,Saurabh Jain,Saurabh Jain,```,0,0,1,1,0
+328,Rohit Tiwari,rohit tiwari3501@ibl/Grocery bill - BigBasket/HDFC Bank,Rohit Tiwari,Rohit Tiwari,BigBasket,```,0,1,1,0,0
+329,Lakshmi Pillai,Lakshmi Pillai4823@okaxis/IndusInd Bank/RefNo:XYZ12345678,IndusInd Bank,Lakshmi Pillai,Lakshmi Pillai,Lakshmi Pillai,0,0,1,1,1
+330,Meera Joshi,meera joshi5628@okhdfcbank,Meera Joshi,Meera Joshi,meera joshi5628@okhdfcbank,meera joshi,0,1,1,0,1
+331,Aarav Kapoor,Aarav Kapoor2231@ybl/RefNo-789456/UPI Transaction,Arav Kapoor,Aarav Kapoor,Aarav Kapoor,```,0,0,1,1,0
+332,Neha Kulkarni,Neha Kulkarni738@oksbi/RefNo-2947581/Axis Bank Ltd,Neha Kulkarni,Neha Kulkarni,Neha Kulkarni738@oksbi,```,0,1,1,0,0
+333,Arjun Reddy,Arjun Reddy,Arjun Reddy,Arjun Reddy,Arjun Reddy,```,1,1,1,1,0
+334,Arjun Sharma,arjun.sharma89@paytm,Arjun Sharma,Arjun Sharma
+
+
+Arjun Sharma,arjun.sharma89@paytm,```,0,1,0,0,0
+335,Apoorva Singh,Apoorva Singh4830@ybl/REF-GroceryBill/Axis Bank Ltd,Grocery Bill,Apoorva Singh,Apoorva Singh,```,0,0,1,1,0
+336,Priya Verma,Priya Verma,Priya Verma,Priya VermaPriya VermaPriya Verma,Priya Verma,Priya Verma,1,1,0,1,1
+337,Priya Sharma,Priya Sharma,Priya Sharma,Priya Sharma,Priya Sharma,```,1,1,1,1,0
+338,Rohit Tiwari,Rohit Tiwari,Rohit Tiwari,Rohit Tiwari,Rohit Tiwari,```,1,1,1,1,0
+339,Ramesh Kumar,Ramesh Kumar92@paytm,Ramesh Kumar,Ramesh Kumar,Ramesh Kumar92@paytm,```,0,1,1,0,0
+340,Rahul Sharma,rahul sharma9840@okaxis/ICICI/REF-1234567890/PMT for,Rahul Sharma,Rahul Sharma,Rahul Sharma,```,0,1,1,1,0
+341,Rajesh Kumar,rajesh kumar789@paytm/Ref-Groceries/EXPRESS,Rajesh Kumar,Rajesh KumarRajesh KumarRajesh KumarRajesh KumarRajesh KumarRajesh KumarRajesh KumarRajesh Kumar,rajesh kumar789@paytm,```,0,1,0,0,0
+342,Arjun Reddy,Grofers India Pvt Ltd,Grofers India,Arjun ReddyThe payee of this transaction is Arjun Reddy,Grofers India Pvt Ltd,```,0,0,0,0,0
+343,Amit Sinha,Amit Sinha,Amit Sinha,Amit Sinha,Amit Sinha,Amit Sinha,1,1,1,1,1
+344,RedBus,RedBus,RedBus,Red BusHDFCDue to Red BusRed BusRed BusRed BusRed BusRed BusRed BusRed BusRed BusRed BusRed BusRed BusRed,HDFC Bank,```,1,1,0,0,0
+345,Rohan Verma,Rohan Verma,Rohan Verma,Rohan Verma
+
+Rohan Verma,Rohan Verma,```,1,1,0,1,0
+346,Arjun Sharma,arjun.sharma7890@paytm,Arjun Sharma,Arjun SharmaThe payee name is Arjun Sharma,arjun.sharma7890@paytm/RefNo:XYZ123/Axis Bank,```,0,1,0,0,0
+347,Meera Joshi,meera joshi8654@okaxis,Meera Joshi,Meera Joshi,meera joshi8654@okaxis,```,0,1,1,0,0
+348,Ramesh Kumar,ramesh.verma92@upi,Ramesh Kumar,Ramesh Kumar,Ramesh Kumar,```,0,1,1,1,0
+349,Ramesh Kumar Sharma,Ramesh Kumar Sharma,Ramesh Kumar Sharma,Ramesh Kumar Sharma,Ramesh Kumar Sharma,```,1,1,1,1,0
+350,Rohan Varma,Rohan Varma,Rohan Varma,Rohan Varma,Isha Menon,```,1,1,1,0,0
+351,Ankit Gupta,ankit gupta4889@okaxis,Ankit Gupta,Ankit Gupta,ankit gupta,```,0,1,1,1,0
+352,Vivek Iyer,vivek iyer3612@oksbi/Grocery Bill - BigBasket/HDFC Bank/TXN ID: 87,Vivek Iyer,Vivek Iyer,vivek iyer,```,0,1,1,1,0
+353,Pantaloons,Pantaloons,Dr.Pantaloons,Pantaloons,Pantaloons,```,1,0,1,1,0
+354,Saurabh Jain,Saurabh Jain376@okaxis,Diwali Gifts,Saurabh Jain,Saurabh Jain,```,0,0,1,1,0
+355,Mahendra Patil,mahendra patil1174@upi,Mahendra Patil,Mahendra Patil,mahendra patil1174@upi,```,0,1,1,0,0
+356,Sneha Nair,Sneha Nair6818@okhdfcbank/UPI,Groceries,Sneha Nair,Sneha Nair,```,0,0,1,1,0
+357,Raghav Bhatia,raghav bhatia1739@ibl,Raghav Bhatia,Raghav Bhatia,Raghav Bhatia,```,0,1,1,1,0
+358,Neha Kulkarni,neha kulkarni7631@ibl/ PAYMENT REF: Groceries - BigBasket /ONLY RS 799,BigBasket,Neha Kulkarni,neha kulkarni7631@ibl,```,0,0,1,0,0
+359,Ramesh Kumar,Ramesh Kumar,Ramesh Kumar,Ramesh Kumar,Ramesh Kumar,```,1,1,1,1,0
+360,Ramesh Kumar,Ramesh Kumar,Ramesh Kumar,Ramesh Kumar,Ramesh Kumar,**Ramesh Kumar**,1,1,1,1,0
+361,Rohit Tiwari,rohit tiwari1124@okhdfcbank/HDFC Bank/RefNo-234789/P,Rohit Tiwari,Rohit Tiwari,rohit tiwari1124@okhdfcbank,```,0,1,1,0,0
+362,Reliance Smart,Ishu Menon,Reliance Smart,Isha Menon,UPI/DR/isha menon9902@oksbi/Grocery bill - Reliance Smart/UPI TRAN//OKSBI789012,```,0,1,0,0,0
+363,Harshit Bansal,Harshit Bansal6550@oksbi/RefNo-234789/SBI,Harshit Bansal,Harshit Bansal,Harshit Bansal6550@oksbi,Harshit Bansal,0,1,1,0,1
+364,Rajesh Kumar Sharma,Rajesh Kumar Sharma,Rajesh Kumar Sharma,Rajesh Kumar Sharma,ICICI,```,1,1,1,0,0
+365,Arjun Sharma,arjun.sharma1992@paytm,Arjun Sharma,Recharge,arjun.sharma1992@paytm,```,0,1,0,0,0
+366,Shivani Das,SHIVANI DAS1322@OKSBI/UCBA/TXN ID:IMPS2023110,Shivani Das,Shivani Das,SHIVANI DAS1322@OKSBI/UCBA/TXN,```,0,1,1,0,0
+367,Rajeev Kumar,Rajeev Kumar,Rajeev Kumar,Rajeev Kumar,Sneha Nair,```,1,1,1,0,0
+368,Ola,Ola,Ola,OlaAutoRideThe payee of this transaction is OlaAutoRide
+
+OlaAutoRideThe payee of this transaction is Ola,Ola,```,1,1,0,1,0
+369,Meera Joshi,meera.joshi7764@upi,Meera Joshi,Meera Joshi,meera.joshi7764@upi,```,0,1,1,0,0
+370,Kiran Mehta,Kiran,Kiran Mehta,Kiran Mehta,Kiran,```,0,1,1,0,0
+371,Harshit Bansal,harshit bansal778@okhdfcbank/PMT REF-TXN123456789/IC,Harshit Bansal,Harshit Bansal,Harshit Bansal,```,0,1,1,1,0
+372,Pizza Hut,ICICI,Pizza Hut,Pizza HutRest,Pizza Hut Rest,```,0,1,0,0,0
+373,Rohan Verma,Rohan Verma/yash.nigam8184@oksbi/RefID:78954321/HDF,Rohan Verma,Rohan Verma,yash.nigam8184@oksbi,```,0,1,1,0,0
+374,Ankit Gupta,Ankit,Ankit Gupta,Ankit Gupta,Ankit Gupta,```,0,1,1,1,0
+375,Nandini Roy7110@paytm,Nandini Roy7110@paytm/RefNo-202410271456/PMT To,Nandini Roy,Nandini RoyThe payee of this transaction is Nandini Roy
+
+Nandini RoyThe payee of this transaction is Nandini RoyN,Nandini Roy7110@paytm,```,0,0,0,1,0
+376,Saurabh Jain,saurabh jain3085@ybl,Saurobh Jain,Saurabh Jain,Saurabh Jain,```,0,0,1,1,0
+377,Ravi Kumar Sharma,RAVI KUMAR SHARMA,Ravi Kumar Sharma,Ravi Kumar Sharma,UPI TRAN/P2P/HDFC0000456789/EXPRESS PAY,```,1,1,1,0,0
+378,BigBasket,YESBANK,BigBasket,BigBasket
+
+The payee of the transaction is BigBasket,BB.,```,0,1,0,0,0
+379,Arjun Sharma,arjun.sharma1992,Arjun Sharma,Arjun SharmaUPI/PAY.Arjun Sharma,arjun.sharma1992@paytm,```,0,1,0,0,0
+380,Raseel Khan,Raseel Khan3089@ybl/ICICI BANK/RefNo-23456789/PMT for,Raseel Khan,Raseel Khan,Raseel Khan3089@ybl/ICICI BANK,```,0,1,1,0,0
+381,Meera Joshi,meera joshi6434@upi/INDUSIND/REF-TXN1234567890,Meera Joshi,Meera Joshi,meera joshi6434@upi,```,0,1,1,0,0
+382,Rajesh Kumar Sharma,Rajesh Kumar Sharma,Rajesh Kumar Sharma,Rajesh Kumar Sharma,Rajesh Kumar Sharma,**Rajesh Kumar Sharma**,1,1,1,1,0
+383,Rahul Sharma,Rahul Sharma 1809@oksbi/Grocery bill paid via GPay /ICICI Bank,Rahul Sharma,Rahul SharmaRahul SharmaRahul SharmaRahul SharmaRahul SharmaRahul SharmaRahul SharmaRahul Sharma,Rahul Sharma,```,0,1,0,1,0
+384,Apoorva Singh,Apoorva Singh,Apoorva Singh,Apoorva Singh,Apoorva Singh,```,1,1,1,1,0
+385,Ravi Kumar,Ravi Kumar,Ravi Kumar,Ravi Kumar,Ravi Kumar,```,1,1,1,1,0
+386,Mahendra Patil,mahendra patil6248@oksbi/SBI/RefNo-78954123/Pay via SBI,Mahendra Patil,Mahendra Patil,mahendra patil6248@oksbi,```,0,1,1,0,0
+387,Rahul Sharma,rahul sharma8719@upi/ICICI/RefNo-202311071456,Rahul Sharma,Rahul Sharma,rahul sharma8719@upi,```,0,1,1,0,0
+388,Rohit Tiwari,rohit tiwari3902@upi,Rohit Tiwari,Rohit Tiwari,rohit tiwari3902@upi,```,0,1,1,0,0
+389,Isha Menon,menon5448@upi,Isha Menon,Isha Menon,IMPS/REF 78901234567890/,```,0,1,1,0,0
+390,Rohan Verma,Rohan Verma,Rohan Verma,Rohan Verma,Rohan Verma,```,1,1,1,1,0
+391,Manoj Yadav,manoj yadav7347@okhdfcbank,Manoj Yadav,Manoj Yadav,mojyadav,manoj yadav,0,1,1,0,1
+392,Zomato,Zomato,Zomato,Zomato,UPI TRAN,```,1,1,1,0,0
+393,Reliance Digital,Reliance Retail,Reliance Digital,Reliance RetailReliance RetailReliance RetailReliance RetailThe payee of this transaction is Reliance RetailReliance RetailReliance RetailReliance RetailRel,Reliance Retail,,0,1,0,0,0
+394,Ritika Chawla,RITIKA CHAWLA6974@oksbi,Ritika Chawla,Ritika Chawla,RITIKA CHAWLA,RITIKA CHAWLA,0,1,1,1,1
+395,Priya Verma,Priya Verma152@okhdfcbank,Priya Verma,Priya Verma,Priya Verma,```,0,1,1,1,0
+396,Rohan Verma,Rohan Verma,Rohan Verma,Rohan Verma,Rohan Verma,```,1,1,1,1,0
+397,Harshit Bansal,harshit bansal5072@oksbi/OKSBI/RefNo-23456789/Groceries,Harshit Bansal,Harshit Bansal,Harshit Bansal5072@oksbi,```,0,1,1,0,0
+398,Shreya Sharma,Shreya Sharma,Shreya Sharma,Shreya Sharma,Shreya Sharma,**shreya.sharma789@paytm**,1,1,1,1,0
+399,Rajesh Kumar,Rajesh Kumar,Rajesh Kumar,Rajesh KumarRajesh KumarRajesh KumarRajesh KumarRajesh KumarRajesh KumarRajesh KumarRajesh Kumar,Rajesh Kumar,```,1,1,0,1,0
+400,Dominos Pizza,Dominos Pizza,Domino's Pizza,Dominos PizzaUkPayee:Dominos PizzaUkThe payee of this transaction is Dominos PizzaUk,UPI ID: paynow@dominos/AXISB,,1,0,0,0,0
+401,Vijay Kumar Sharma,vijay kumar sharma,Vijay Kumar Sharma,Vijay Kumar Sharma,vijay kumar sharma,```,1,1,1,1,0
+402,Ankit Gupta,Ankit Gupta5323@paytm/HDFC Bank/RefNo.XYZ123456789/Only,Ankit Gupta,Ankit Gupta,Ankit Gupta,```,0,1,1,1,0
+403,Neha Kulkarni,neha kulkarni,Neha Kulkarni,Neha Kulkarni,neha kulkarni728@ibl,```,1,1,1,0,0
+404,Dominos Pizza,Dominos Pizza,Domino's Pizza,Dominos Pizza,Dominos Pizza,```,1,0,1,1,0
+405,Saurabh Jain,saurabh jain,Saarabh Jain,Saurabh Jain,Saurabh Jain,```,1,0,1,1,0
+406,Ravi Kumar,Ravi Kumar,Ravi Kumar,Ravi Kumar,Ravi Kumar,```,1,1,1,1,0
+407,Arjun Sharma,Arjun Sharma,Arjun Sharma,Arjun Sharma
+
+Arjun Sharma
+
+Note:Payee Arjun Sharma The payee of this transaction is Arjun Sharma,Arjun Sharma,```,1,1,0,1,0
+408,Rohan Verma,Rohan Verma - Mobile Recharge,Rohan Verma,Rohan Verma,Rohan Verma,```,0,1,1,1,0
+409,Vijay Sales,Vijay Sales,Vijay Sales,Vijay SalesVijay Sales
+
+The payee of the transaction is Vijay SalesVijay Sales,Vijay Sales,```,1,1,0,1,0
+410,Aarav Kapoor,aaravkapoor7690@upi,Arav Kapoor,Aarav Kapoor,Aarav Kapoor,```,0,0,1,1,0
+411,Paytm,abc@paytm,Paytm,abc PaytmThe payee of this transaction is ABC PayTM,abc@paytm,```,0,1,0,0,0
+412,Reliance Digital,Reliance Digital,Reliance Digital,Reliance DigitalReliance DigitalReliance DigitalReliance DigitalReliance DigitalReliance DigitalReliance DigitalReliance DigitalReliance DigitalReliance DigitalReliance,Ref-231015-1456/Swipe transaction,```,1,1,0,0,0
+413,Raseel Khan,Raseel Khan172@upi/ICICI/RefNo-2023111512345,Raseel Khan,Raseel KhanRaseel KhanRaseel KhanRaseel KhanRaseel KhanRaseel KhanRaseel KhanRaseel Khan,Raseel Khan,```,0,1,0,1,0
+414,Aravind Sharma,Aravind Sharma,Aravind Sharma,Aravind Sharma,Aravind Sharma,```,1,1,1,1,0
+415,Jio Platforms,sneha nair3118@ibl/Mobile Recharge - Jio/JIO PLATFORMS LTD/512345,Jio,Sneha Nair,Sneha Nair,```,0,0,0,0,0
+416,Saurabh Jain,Saurabh Jain,Saurabh Jain,Saurabh Jain,Saurabh Jain,```,1,1,1,1,0
+417,Sneha Nair,Sneha Nair,Sneha Nair,Sneha Nair,Sneha Nair,Sneha Nair,1,1,1,1,1
+418,Gaurav Malhotra,gaurav malhotra7589@okhdfcbank,Gaurav Malhotra,Gaurav Malhotra,gaurav malhotra7589@okhdfcbank,```,0,1,1,0,0
+419,Sneha Nair,Sneha Nair,Paytm,Sneha Nair,Sneha Nair,Sneha Nair,1,0,1,1,1
+420,Lakshmi Pillai,lakshmi pillai7121@okhdfcbank/HDFC Bank/RefNo-2347890,Lakshmi Pillai,Lakshmi Pillai,lakshmi pillai7121@okhdfcbank,```,0,1,1,0,0
+421,Ankit Gupta,ankit gupta3037@upi,Ankit Gupta,Ankit Gupta,ICICI Bank,```,0,1,1,0,0
+422,Arjun Sharma,arjun.sharma89,Arjun Sharma,Arjun Sharma
+
+Arjun Sharma
+
+Note:Payee name Arjun Sharma,arjun.sharma89@upi/PAYMENT TO ARJUN SHARMA,```,0,1,0,0,0
+423,Nikhil Arora,Nikhil Arora@hdfcbank,Kishan Arora,Nikhil Arora
+
+Nikhil Arora,Nikhil arora,**nikhil arora**,0,0,0,1,0
+424,Rohan Sharma,Rohan Sharma,Rohan Sharma,Rohan Sharma,arjun.reddy3051@ybl/PMT,```,1,1,1,0,0
+425,Lakshmi Pillai,Lakshmi Pillai,Lakshmi Pillai,Lakshmi Pillai,Lakshmi Pillai,Lakshmi Pillai,1,1,1,1,1
+426,Tanvi Desai,tanvi.desai6793@okaxis,Tanvi Desai,Tanvi DesaiThe payee of this transaction is Tanvi Desai,tanvi.desai6793@okaxis,tanvi.desai6793@okaxis,0,1,0,0,0
+427,Arjun Reddy,Arjun Reddy,Arjun Reddy,Arjun Reddy,Arjun Reddy,```,1,1,1,1,0
+428,Ankit Gupta,Ankit Gupta6515@oksbi/REF-TRF-202410271435/Axis,Ankit Gupta,Ankit Gupta,Ankit Gupta,```,0,1,1,1,0
+429,Shivani Das,shivani das5405@paytm,Shivani Das,Shivani DasShivani DasShivani DasShivani DasiShivani DasShivani DasShivani DasShivani,Shivani Das,```,0,1,0,1,0
+430,Ramesh Kumar Sharma,Ramesh Kumar Sharma,Ramesh Kumar Sharma,Ramesh Kumar Sharma
+
+Ramesh Kumar Sharma,Ramesh Kumar Sharma,**Ramesh Kumar Sharma**,1,1,0,1,0
+431,Priya Verma,priya verma9579@paytm,Priya Verma,Priya Verma,priya verma,```,0,1,1,1,0
+432,Pooja Batra,Pooja Batra6859@paytm/HDFC Bank/REF:789456123/Payment,Pooja Batra,Pooja Batra,Pooja Batra,```,0,1,1,1,0
+433,Rohan Verma,Rohan Verma,Rohan Verma,Rohan Verma,nandini.roy7483@ibl,```,1,1,1,0,0
+434,Isha Menon,isha menon,Isha Menon,Isha Menon,menon9205@oksbi,```,1,1,1,0,0
+435,Vivek Iyer,vivek iyer8605@oksbi,Vivek Iyer,Vivek Iyer,vivek iyer8605@oksbi,vivek iyer,0,1,1,0,1
+436,Isha Menon,Isha Menon 1346@ybl,BigBasket,Isha Menon,Isha Menon,```,0,0,1,1,0
+437,Rajesh Kumar Sharma,Rajesh Kumar Sharma,Rajesh Kumar Sharma,Rajesh Kumar Sharma,Rajesh Kumar Sharma,```,1,1,1,1,0
+438,Ramesh Kumar,Ramesh Kumar,Ramesh Kumar,Ramesh Kumar,Ramesh Kumar,```,1,1,1,1,0
+439,Manoj Yadav,manoj yadav6529,BigBasket,Manoj YadavManoj Y Manoj Yadav,manoj yadav6529@upi/Groceries,manoj yadav6529@upi,0,0,0,0,0
+440,Saurabh Jain,saurabh jain2479@ibl,Saurobh Jain,Saurabh Jain,ICICI BANK,```,0,0,1,0,0
+441,Manoj Yadav,manoj yadav2968@oksbi,Manoj Yadav,Manoj Yadav,Moj Yadav,manoj yadav,0,1,1,0,1
+442,Mahendra Patil,mahendra.patil3276@ybl,Mahendra Patil,Mahendra Patil,mahendra.patil3276@ybl,```,0,1,1,0,0
+443,JioMart,JioMart Grocery,JioMart,Jio Mart Grocery Jio Mart Grocery Ref. This is Jio Mart Grocery Jio Mart Grocery This is Jio Mart Grocery Jio Mart Grocery This,JioMart,```,0,1,0,1,0
+444,Amit Sinha,Amit Sinha993@ibl/REF:Bill Payment/1234567890/ To extract the pay,Amit Sinha,Amit Sinha,Amit Sinha,```,0,1,1,1,0
+445,Cafe Coffee Day,CCDCORP234567,Cafe Coffee Day,Café Coffee DayThe payee of this transaction is Café Coffee DayCafé Coffee DayCafé Coffee DayCafé Coffee DayC,CCDCORP234567,```,0,1,0,0,0
+446,Ritika Chawla,RITIKA CHAWLA90@OKSBI,Ritika Chawla,Ritika Chawla,RITIKA CHAWLA90@OKSBI,RITIKA CHAWLA,0,1,1,0,1
+447,Isha Menon,Isha Menon,Isha Menon,Isha Menon,Isha Menon,```,1,1,1,1,0
+448,Priya Sharma,priyasharma91@upi,Priya Sharma,Priya Sharma,Priya Sharma,**Priya Sharma**,0,1,1,1,0
+449,Rajesh Kumar Sharma,Rajesh Kumar Sharma,Rajesh Kumar Sharma,Rajesh Kumar Sharma,Rajesh Kumar Sharma,```,1,1,1,1,0
+450,Ankit Gupta,Ankit Gupta2787@okaxis,Ankit Gupta,Ankit Gupta,Ankit Gupta,```,0,1,1,1,0
+451,Neha Kulkarni,Neha Kulkarni7915,Neha Kulkarni,Neha Kulkarni,Neha Kulkarni,```,0,1,1,1,0
+452,IndiGo Airlines,IndiGo Airlines,IndiGo Airlines,IndiGo Airlines,Air India,```,1,1,1,0,0
+453,Meera Joshi,meera joshi2661@ibl/ICICI BANK/REF-78954123/TXN ID,Meera Joshi,Meera Joshi,meera joshi,```,0,1,1,1,0
+454,Priya Sharma,Priya Sharma,Priya Sharma,Priya Sharma,Priya Sharma,```,1,1,1,1,0
+455,Reliance Retail,mahendra patil6606@oksbi/PMT,Reliance Retail,Mahendra Patil,mahendra patil6606@oksbi/PMT for groceries - Reliance Retail/ONLY RS 499.99,**mahendra patil**,0,1,0,0,0
+456,Aarav Kapoor,Aarav Kapoor,Aarav Kapoor,Aarav Kapoor,Aarav Kapoor,**Aarav Kapoor**,1,1,1,1,0
+457,Reliance Fresh,daulat rao2657@upi/Grocery bill - Reliance Fresh/HDFC0001234,Reliance Fresh,Daulat Rao,Reliance Fresh,,0,1,0,1,0
+458,Rohan Verma,Rohan Verma,Rohan Verma,Rohan Verma,Rohan Verma,```,1,1,1,1,0
+459,Isha Menon,Isha Menon 3028 @ okhdfcbank,Rohan Menon,Isha Menon,Isha Menon,```,0,0,1,1,0
+460,Manoj Yadav,Manoj Yadav,Manoj Yadav,Manoj Yadav,Manoj Yadav,```,1,1,1,1,0
+461,Isha Menon,isha menon3307@okaxis,Airtel,Isha Menon,Airtel Prepaid,```,0,0,1,0,0
+462,Apoorva Singh,Apoorva Singh5577@ybl/ICICI/RefNo-202311061432,Apoorva Singh,Apoorva Singh,Apoorva Singh,```,0,1,1,1,0
+463,Tanvi Desai,tanvi desai1097@okhdfcbank,Tanvi Desai,Tanvi Desai,Tanvi Desai,tanvi desai,0,1,1,1,1
+464,Priya Verma,Priya Verma,Priya Verma,Priya Verma,priya verma7876@ibl,```,1,1,1,0,0
+465,Arjun Reddy,Arjun Reddy6983@okhdfcbank/TRF EXPRESS/RefNo-234789/Payment to,Arjun Reddy,Arjun Reddy,friend,```,0,1,1,0,0
+466,Neha Kulkarni,Neha Kulkarni,Neha Kulkarni,Neha Kulkarni,Neha Kulkarni8177@paytm,```,1,1,1,0,0
+467,Shivani Das,Shivani,Shivani Das,Shivani DasShivani DasShivani DasShivani DasShivani DasShivani DasShivani DasShivani Das,Shivani das,```,0,1,0,1,0
+468,Reliance Fresh,Nikhil Arora 6643 @ okaxis,Reliance Fresh,Nikhil Arora,Reliance Fresh,```,0,1,0,1,0
+469,Ramesh Kumar,Ramesh Kumar,Ramesh Kumar,Ramesh Kumar,Ramesh Kumar,```,1,1,1,1,0
+470,Sneha Nair,sneha nair2159@okhdfcbank,Sneha Nair,Sneha Nair,Sneha Nair,```,0,1,1,1,0
+471,Reliance Fresh,arjun.sharma1992@ibl/Groceries,Reliance Fresh,Arjun Sharma,arjun.sharma1992@ibl,```,0,1,0,0,0
+472,Ankit Gupta,ankit gupta1852@upi,Ankit Gupta,Ankit Gupta,ankit gupta1852@upi,```,0,1,1,0,0
+473,Pantaloons,Pantaloons,Pantaloons,Pantaloons Pantaloons,Pantaloons,```,1,1,0,1,0
+474,Isha Menon,Isha Menon,Isha Menon,Isha Menon,Isha Menon,```,1,1,1,1,0
+475,Raseel Khan,Raseel Khan8544@okhdfcbank,Raseel Khan,Raseel KhanRaseel Khan,Raseel Khan8544@okhdfcbank,**Raseel Khan**,0,1,0,0,0
+476,Manoj Yadav,manoj yadav4214@okaxis/HDFC Bank/TRF-Rent-Nov/RefNo-XYZ1234,Manoj Yadav,Manoj Yadav,manoj yadav4214@okaxis,manoj yadav,0,1,1,0,1
+477,Nikhil Arora,Nikhil Arora 5828,NIHIL ARORA,Nikhil Arora,nikhil.arora5828@upi,**nikhil.arora5828**,0,0,1,0,0
+478,Sneha Nair,Sneha Nair6084@ybl/HDFC Bank/TXN ID:87654321/Ref,Bill Payment,Sneha Nair,Sneha Nair,```,0,0,1,1,0
+479,Raseel Khan,Raseel Khan,Raseel Khan,Raseel KhanRaseel KhanRaseel KhanRaseel KhanRaseel KhanRaseel KhanRaseel KhanRaseel Khan,Raseel Khan,```,1,1,0,1,0
+480,Neha Kulkarni,neha kulkarni2183@ybl,Neha Kulkarni,Neha Kulkarni,neha kulkarni,```,0,1,1,1,0
+481,Vivek Iyer,vivek iyer90@paytm,Vivek Iyer,Vivek Iyer,vivek iyer90@paytm,```,0,1,1,0,0
+482,Vivek Iyer,vivek iyer3770@oksbi,Vivek Iyer,Vivek Iyer,vivek iyer3770@oksbi,```,0,1,1,0,0
+483,Harshit Bansal,harshit bansal658@upi,Harshit Bansal,Harshit Bansal,Harshit Bansal,```,0,1,1,1,0
+484,Reliance Fresh,arjun.verma91@upi,Arjun Verma,Arjun Verma,arjun.verma91@upi/Grocery,```,0,0,0,0,0
+485,Amit Sinha,Groceries,Amit Sinha,Amit Sinha,Amit Sinha,```,0,1,1,1,0

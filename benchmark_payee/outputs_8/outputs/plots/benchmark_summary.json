@@ -5,7 +5,7 @@
     "recall": 0.0,
     "f1": 0.0,
     "n_samples": 486,
-    "avg_latency_ms": 1387.12,
+    "avg_latency_ms": 1995.64,
     "model_type": "primary"
   },
   "Fine-tuned (LoRA)": {
@@ -32,7 +32,7 @@
     "recall": 67.18,
     "f1": 66.51,
     "n_samples": 486,
-    "avg_latency_ms": 972.64,
+    "avg_latency_ms": 2079.79,
     "model_type": "baseline"
   },
   "Gemma-2-2B (Google)": {
@@ -41,7 +41,7 @@
     "recall": 11.39,
     "f1": 11.34,
     "n_samples": 486,
-    "avg_latency_ms": 10026.02,
+    "avg_latency_ms": 15189.4,
     "model_type": "baseline"
   }
 }
