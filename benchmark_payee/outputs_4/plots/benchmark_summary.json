@@ -1,0 +1,47 @@
+{
+  "Base Qwen 2.5-1.5B": {
+    "exact_match": 35.39,
+    "precision": 55.91,
+    "recall": 62.14,
+    "f1": 57.53,
+    "n_samples": 486,
+    "avg_latency_ms": 150.6,
+    "model_type": "primary"
+  },
+  "Fine-tuned (LoRA)": {
+    "exact_match": 86.21,
+    "precision": 89.4,
+    "recall": 89.3,
+    "f1": 89.3,
+    "n_samples": 486,
+    "avg_latency_ms": 0.0,
+    "model_type": "primary"
+  },
+  "DP Fine-tuned (LoRA)": {
+    "exact_match": 62.76,
+    "precision": 80.39,
+    "recall": 89.81,
+    "f1": 83.98,
+    "n_samples": 486,
+    "avg_latency_ms": 0.0,
+    "model_type": "primary"
+  },
+  "Llama-3.2-1B (Meta)": {
+    "exact_match": 55.56,
+    "precision": 66.32,
+    "recall": 67.18,
+    "f1": 66.51,
+    "n_samples": 486,
+    "avg_latency_ms": 1017.21,
+    "model_type": "baseline"
+  },
+  "Gemma-2-2B (Google)": {
+    "exact_match": 10.7,
+    "precision": 11.32,
+    "recall": 11.39,
+    "f1": 11.34,
+    "n_samples": 486,
+    "avg_latency_ms": 10446.18,
+    "model_type": "baseline"
+  }
+}

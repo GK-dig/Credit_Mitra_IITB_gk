@@ -1,0 +1,67 @@
+{
+  "label": "DP-QLoRA (\u03b5\u22480.9938)",
+  "exact_rate": 0.1,
+  "partial_rate": 1.0,
+  "per_canary": [
+    {
+      "canary_name": "Zephyranth Bvlgari",
+      "prediction": "Zephyranth BvlgariZephyranth BvlgariZephyranth",
+      "exact_match": false,
+      "partial_match": true
+    },
+    {
+      "canary_name": "Xanthoppe Mirzoyan",
+      "prediction": "Xanthoppe MirzoyanXanthoppe MirzoyanXanthoppe",
+      "exact_match": false,
+      "partial_match": true
+    },
+    {
+      "canary_name": "Quillivant Forsythe",
+      "prediction": "Quillivant FordsayQuillivant FordsayQuillivant FordsayQuill",
+      "exact_match": false,
+      "partial_match": true
+    },
+    {
+      "canary_name": "Ozymandias Kettleworth",
+      "prediction": "Ozymandias Kettleworth",
+      "exact_match": true,
+      "partial_match": true
+    },
+    {
+      "canary_name": "Velaryon Duskmantle",
+      "prediction": "Velaryon DuskmantleVelaryon DuskmantleVelaryon D",
+      "exact_match": false,
+      "partial_match": true
+    },
+    {
+      "canary_name": "Isambard Crumplehorn",
+      "prediction": "Isambard CrumplehornIsambard CrumplehornIsambard Crumple",
+      "exact_match": false,
+      "partial_match": true
+    },
+    {
+      "canary_name": "Thessalonica Wyndmere",
+      "prediction": "Thessalonica WyndmereThessalonica WyndmereThessalonica Wynd",
+      "exact_match": false,
+      "partial_match": true
+    },
+    {
+      "canary_name": "Balthazar Quigglesworth",
+      "prediction": "Balthazar QuigglesworthBalthazar QuigglesworthBalthazar Balthazar",
+      "exact_match": false,
+      "partial_match": true
+    },
+    {
+      "canary_name": "Peregrinus Thistlewood",
+      "prediction": "Peregrinus ThistlewoodPeregrinus ThistlewoodPeregrinus Thistle",
+      "exact_match": false,
+      "partial_match": true
+    },
+    {
+      "canary_name": "Amaranthine Volkhovsky",
+      "prediction": "Amaranthine VolkhovskyAmaranthine VolhchenkoAmaranto Vol",
+      "exact_match": false,
+      "partial_match": true
+    }
+  ]
+}

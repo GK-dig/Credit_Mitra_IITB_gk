@@ -67,13 +67,13 @@ def load_jsonl(path: Path) -> list:
     return rows
 
 def load_all(root: Path):
-    benchmark  = load_json(root  / "outputs_1/plots/benchmark_summary.json")
+    benchmark  = load_json(root  / "outputs_8/outputs/plots/benchmark_summary.json")
     lora_m     = load_json(root  / "outputs_8/outputs/eval/metrics.json")
-    dp_m       = load_json(root  / "outputs_1/eval-dp/metrics.json")
-    dp_logs    = load_json(root  / "outputs_1/payee-lora-dp/dp_training_logs.json")
+    dp_m       = load_json(root  / "outputs_8/outputs/eval-dp/metrics.json")
+    dp_logs    = load_json(root  / "outputs_8/outputs/payee-lora-dp/dp_training_logs.json")
     trainer    = load_json(root  / "outputs_8/outputs/payee-lora/checkpoint-414/trainer_state.json")
     lora_preds = load_jsonl(root / "outputs_8/outputs/eval/predictions.jsonl")
-    dp_preds   = load_jsonl(root / "outputs_1/eval-dp/predictions.jsonl")
+    dp_preds   = load_jsonl(root / "outputs_8/outputs/eval-dp/predictions.jsonl")
     return benchmark, lora_m, dp_m, dp_logs, trainer, lora_preds, dp_preds
 
 
@@ -398,7 +398,7 @@ def main():
 
     benchmark, lora_m, dp_m, dp_logs, trainer, lora_preds, dp_preds = load_all(root)
 
-    out = root / "outputs_1/plots/figures"
+    out = root / "outputs_8/outputs/plots/figures"
     out.mkdir(parents=True, exist_ok=True)
     print(f"Output dir : {out}\n")
 

@@ -1,0 +1,15 @@
+{
+  "label": "QLoRA  (non-private)",
+  "mia_auc": 0.5433,
+  "avg_precision": 0.5463,
+  "accuracy": 0.5442,
+  "tpr_at_fpr_0.10": 0.1173,
+  "optimal_loss_threshold": 4.8187,
+  "n_members": 486,
+  "n_nonmembers": 486,
+  "member_loss_mean": 4.8051,
+  "member_loss_std": 0.3626,
+  "nonmember_loss_mean": 4.8645,
+  "nonmember_loss_std": 0.3623,
+  "interpretation": "\u2705 Strong DP \u2014 attack barely above random"
+}

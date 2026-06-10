@@ -1,0 +1,67 @@
+{
+  "label": "DP-QLoRA (\u03b5\u22480.9938)",
+  "exact_rate": 0.7,
+  "partial_rate": 1.0,
+  "per_canary": [
+    {
+      "canary_name": "Zephyranth Bvlgari",
+      "prediction": "Zephyranth BVGarian",
+      "exact_match": false,
+      "partial_match": true
+    },
+    {
+      "canary_name": "Xanthoppe Mirzoyan",
+      "prediction": "Xanthoppe Mirzoyan",
+      "exact_match": true,
+      "partial_match": true
+    },
+    {
+      "canary_name": "Quillivant Forsythe",
+      "prediction": "Quillivant Forsythe",
+      "exact_match": true,
+      "partial_match": true
+    },
+    {
+      "canary_name": "Ozymandias Kettleworth",
+      "prediction": "Ozymandias Kettleworth",
+      "exact_match": true,
+      "partial_match": true
+    },
+    {
+      "canary_name": "Velaryon Duskmantle",
+      "prediction": "Velaryon Dusmanta",
+      "exact_match": false,
+      "partial_match": true
+    },
+    {
+      "canary_name": "Isambard Crumplehorn",
+      "prediction": "Isambard Crumplehorn",
+      "exact_match": true,
+      "partial_match": true
+    },
+    {
+      "canary_name": "Thessalonica Wyndmere",
+      "prediction": "Thessalonica Wyndmere",
+      "exact_match": true,
+      "partial_match": true
+    },
+    {
+      "canary_name": "Balthazar Quigglesworth",
+      "prediction": "Balthazar Quigg",
+      "exact_match": false,
+      "partial_match": true
+    },
+    {
+      "canary_name": "Peregrinus Thistlewood",
+      "prediction": "Peregrinus Thistlewood",
+      "exact_match": true,
+      "partial_match": true
+    },
+    {
+      "canary_name": "Amaranthine Volkhovsky",
+      "prediction": "Amaranthine Volkhovsky",
+      "exact_match": true,
+      "partial_match": true
+    }
+  ]
+}
